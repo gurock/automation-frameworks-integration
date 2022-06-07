@@ -1,0 +1,1 @@
+# TestRail automation frameworks integration
