@@ -1,0 +1,6 @@
+/.vs
+/.vscode
+/NuGet
+*/bin
+*/obj
+/reports

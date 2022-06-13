@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests" tests="3" errors="0" failures="1" skipped="0" time="23.210" timestamp="2022-06-13T11:57:04.700000">
+<testsuite name="Homepage-Links" tests="3" errors="0" failures="1" skipped="0" time="23.188" timestamp="2022-06-13T11:57:04.717000">
+<testcase classname="Tests.Homepage-Links" name="Go To My Account Page" time="8.101">
+</testcase>
+<testcase classname="Tests.Homepage-Links" name="Go To Demo Request Page" time="8.411">
+</testcase>
+<testcase classname="Tests.Homepage-Links" name="Go To Trial Request Page" time="6.510">
+<failure message="Page should have contained text 'Hey, this is the wrong text!' but did not." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="Simple homepage links tests"/>
+</properties>
+</testsuite>
+</testsuite>

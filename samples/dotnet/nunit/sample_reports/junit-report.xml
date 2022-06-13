@@ -1,0 +1,27 @@
+﻿<testsuites tests="7" failures="2" disabled="0" time="0.524147">
+  <properties>
+    <property name="_PID" value="2276"></property>
+    <property name="_APPDOMAIN" value="nunit-agent"></property>
+  </properties>
+  <testsuite tests="3" time="0.047927" errors="0" failures="1" skipped="0" timestamp="2022-06-13T10:51:23.6178230Z" name="SimpleTestProject.MultiplicationTests.">
+    <testcase name="MultiplyDataset(2,1,2)" assertions="1" time="0.008656" status="Passed" classname="SimpleTestProject.MultiplicationTests" />
+    <testcase name="MultiplyDataset(2,2,4)" assertions="1" time="0.000105" status="Passed" classname="SimpleTestProject.MultiplicationTests" />
+    <testcase name="MultiplyDataset(2,3,5)" assertions="1" time="0.037090" status="Failed" classname="SimpleTestProject.MultiplicationTests">
+      <failure message="  Expected: 5&#xD;&#xA;  But was:  6&#xD;&#xA;">   at SimpleTestProject.MultiplicationTests.MultiplyDataset(Int32 a, Int32 b, Int32 expected) in C:\Github\automation-frameworks-integration\samples\dotnet\nunit\SimpleTestProject\Tests\MultiplicationTests.cs:line 19
+</failure>
+    </testcase>
+  </testsuite>
+  <testsuite tests="1" time="0.000392" errors="0" failures="0" skipped="0" timestamp="2022-06-13T10:51:23.6667140Z" name="SimpleTestProject.SubtractionTests.">
+    <testcase name="SubtractTwoNumbers" assertions="1" time="0.000305" status="Passed" classname="SimpleTestProject.SubtractionTests" />
+  </testsuite>
+  <testsuite tests="2" time="0.001351" errors="0" failures="1" skipped="0" timestamp="2022-06-13T10:51:23.6671193Z" name="SimpleTestProject.SumTests.">
+    <testcase name="SumTwoNumbers" assertions="1" time="0.000057" status="Passed" classname="SimpleTestProject.SumTests" />
+    <testcase name="SumTwoNumbersWithDecimals" assertions="1" time="0.001232" status="Failed" classname="SimpleTestProject.SumTests">
+      <failure message="  Expected: 2.5d&#xD;&#xA;  But was:  2.4900000000000002d&#xD;&#xA;">   at SimpleTestProject.SumTests.SumTwoNumbersWithDecimals() in C:\Github\automation-frameworks-integration\samples\dotnet\nunit\SimpleTestProject\Tests\SumTests.cs:line 18
+</failure>
+    </testcase>
+  </testsuite>
+  <testsuite tests="1" time="0.000133" errors="0" failures="0" skipped="0" timestamp="2022-06-13T10:51:23.6684850Z" name="SimpleTestProject.SumTests+SumMultipleNumbersTests.">
+    <testcase name="SumThreeNumbers" assertions="1" time="0.000066" status="Passed" classname="SimpleTestProject.SumTests+SumMultipleNumbersTests" />
+  </testsuite>
+</testsuites>
