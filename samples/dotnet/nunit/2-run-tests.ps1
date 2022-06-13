@@ -1,2 +1,0 @@
-﻿dotnet build
-.\NuGet\nunit.consolerunner\3.15.0\tools\nunit3-console SimpleTestProject\bin\Debug\net6.0\SimpleTestProject.dll --trace off --result "reports/junit-report.xml;transform=SimpleTestProject/nunit3-junit.xslt"
