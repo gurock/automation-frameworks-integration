@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="5" time="0.052" timestamp="2022-07-22T11:59:47.676884" hostname="LAPTOP-09USROG2"><testcase classname="tests.test_subtraction" name="test_subtract_two_numbers" file="tests\test_subtraction.py" line="0" time="0.001" /><testcase classname="tests.test_sum" name="test_sum_two_numbers" file="tests\test_sum.py" line="3" time="0.000" /><testcase classname="tests.test_sum" name="test_sum_two_decimals" file="tests\test_sum.py" line="7" time="0.000"><failure message="assert (0.8 + 0.3) == 1.2">def test_sum_two_decimals():
+&gt;       assert 0.8 + 0.3 == 1.2
+E       assert (0.8 + 0.3) == 1.2
+
+tests\test_sum.py:9: AssertionError</failure></testcase><testcase classname="tests.test_sum" name="test_sum_multiple_numbers[3+5-8]" file="tests\test_sum.py" line="11" time="0.001" /><testcase classname="tests.test_sum" name="test_sum_multiple_numbers[2+4-6]" file="tests\test_sum.py" line="11" time="0.000" /></testsuite></testsuites>
