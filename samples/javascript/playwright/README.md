@@ -1,4 +1,4 @@
-# Pytest sample project
+# Playwright sample project
 
 ## How to use the project
 
@@ -10,10 +10,10 @@
 pip install trcli
 
 # Install test project
-pip install -r requirements.txt
+npm install
 
 # Run tests
-pytest --junitxml "reports/junit-report.xml" "./tests"
+npx playwright test
 
 # Upload test results
 trcli -y -c "trcli-config.yml" parse_junit -f "reports/junit-report.xml"

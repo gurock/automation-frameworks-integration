@@ -1,0 +1,47 @@
+<testsuites id="" name="" tests="5" failures="1" skipped="0" errors="0" time="11.735079999998211">
+<testsuite name="demo-todo-app.spec.js" timestamp="1664398747192" hostname="" tests="5" failures="1" skipped="0" time="15.591" errors="0">
+<testcase name="New Todo should allow me to add todo items" classname="demo-todo-app.spec.js › New Todo › should allow me to add todo items" time="2.346">
+</testcase>
+<testcase name="New Todo should clear text input field when an item is added" classname="demo-todo-app.spec.js › New Todo › should clear text input field when an item is added" time="2.434">
+</testcase>
+<testcase name="New Todo should append new items to the bottom of the list" classname="demo-todo-app.spec.js › New Todo › should append new items to the bottom of the list" time="2.045">
+</testcase>
+<testcase name="Mark all as completed should allow me to mark all items as completed" classname="demo-todo-app.spec.js › Mark all as completed › should allow me to mark all items as completed" time="7.376">
+<failure message="demo-todo-app.spec.js:73:3 should allow me to mark all items as completed" type="FAILURE">
+<![CDATA[  demo-todo-app.spec.js:73:3 › Mark all as completed › should allow me to mark all items as completed 
+
+    Error: expect(received).toHaveClass(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Array [
+    -   "complete",
+    -   "complete",
+    -   "complete",
+    +   "completed",
+    +   "completed",
+    +   "completed",
+      ]
+    Call log:
+      - expect.toHaveClass with timeout 5000ms
+      - waiting for selector ".todo-list li"
+      -   selector resolved to 3 elements
+
+
+      76 |
+      77 |     // Ensure all todos have 'completed' class.
+    > 78 |     await expect(page.locator('.todo-list li')).toHaveClass(['complete', 'complete', 'complete']);
+         |                                                 ^
+      79 |     await checkNumberOfCompletedTodosInLocalStorage(page, 3);
+      80 |   });
+      81 |
+
+        at C:\Github\d-rede\playwright-tests-new\tests\demo-todo-app.spec.js:78:49
+]]>
+</failure>
+</testcase>
+<testcase name="Mark all as completed should allow me to clear the complete state of all items" classname="demo-todo-app.spec.js › Mark all as completed › should allow me to clear the complete state of all items" time="1.39">
+</testcase>
+</testsuite>
+</testsuites>
