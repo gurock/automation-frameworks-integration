@@ -1,8 +1,17 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
+const { randomUUID } = require('crypto');
 
 test.beforeEach(async ({ page }) => {
   await page.goto('https://demo.playwright.dev/todomvc');
+});
+
+test.afterEach(async ({ page }, testInfo) => {
+  if (testInfo.status !== testInfo.expectedStatus) {
+    let screenshotPath = `test-results/screenshots/screenshot-${randomUUID()}.png`;
+    await page.screenshot({ path: screenshotPath, fullPage: true });
+    testInfo.annotations.push({ type: 'testrail_attachment', description: screenshotPath });
+  }
 });
 
 const TODO_ITEMS = [

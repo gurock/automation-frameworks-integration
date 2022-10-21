@@ -7,6 +7,12 @@ const { devices } = require('@playwright/test');
  */
 // require('dotenv').config();
 
+const testRailOptions = {
+  // Whether to add <properties> with all annotations; default is false
+  embedAnnotationsAsProperties: true,
+  // Where to put the report.
+  outputFile: './test-results/junit-report.xml'
+};
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -35,7 +41,7 @@ const config = {
   reporter: [
     ['list'],
     ['html', { outputFolder: 'reports', open: 'never' }],
-    ['junit', { outputFile: 'reports/junit-report.xml' }]
+    ['junit', testRailOptions]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -49,7 +55,7 @@ const config = {
   },
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  // outputDir: 'test-results/',
+  outputDir: 'test-results/',
 
   /* Run your local dev server before starting the tests */
   // webServer: {

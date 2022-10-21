@@ -16,5 +16,5 @@ npm install
 npx playwright test
 
 # Upload test results
-trcli -y -c "trcli-config.yml" parse_junit -f "reports/junit-report.xml"
+trcli -y -c "trcli-config.yml" parse_junit -f "test-results/junit-report.xml"
 ```
