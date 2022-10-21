@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="5" skipped="0" failures="1" errors="0" time="0" hostname="LAPTOP-09USROG2" timestamp="2022-10-21T14:47:25">
+<properties>
+<property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+<property name="basedir" value="C:\Github\automation-frameworks-integration\samples\java\junit5"/>
+<property name="file.encoding" value="Cp1252"/>
+<property name="file.separator" value="\"/>
+<property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+<property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+<property name="java.class.path" value="C:\Github\automation-frameworks-integration\samples\java\junit5\target\test-classes;C:\Github\automation-frameworks-integration\samples\java\junit5\target\classes;C:\Users\dired\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\dired\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\dired\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\dired\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dired\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\dired\.m2\repository\com\testrail\testrail-junit-extensions\0.1.0\testrail-junit-extensions-0.1.0.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-suite-api\1.7.1\junit-platform-suite-api-1.7.1.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-reporting\1.7.1\junit-platform-reporting-1.7.1.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-launcher\1.7.1\junit-platform-launcher-1.7.1.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-runner\1.7.1\junit-platform-runner-1.7.1.jar;C:\Users\dired\.m2\repository\junit\junit\4.13\junit-4.13.jar;C:\Users\dired\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+<property name="java.class.version" value="55.0"/>
+<property name="java.home" value="C:\Java\jdk-11.0.13"/>
+<property name="java.io.tmpdir" value="C:\Users\dired\AppData\Local\Temp\"/>
+<property name="java.library.path" value="C:\Java\jdk-11.0.13\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Dev\webdrivers;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Dev\Git\cmd;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\Python310\Scripts\;C:\Python310\;C:\Users\dired\AppData\Local\Microsoft\WindowsApps;C:\Users\dired\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.3.2\bin;;C:\Users\dired\AppData\Roaming\npm;C:\Users\dired\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\bin;;C:\Users\dired\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\plugins\maven\lib\maven3\bin;C:\Dev\nunit-console\bin\net6.0;;."/>
+<property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+<property name="java.runtime.version" value="11.0.13+10-LTS-370"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="11"/>
+<property name="java.vendor" value="Oracle Corporation"/>
+<property name="java.vendor.url" value="https://openjdk.java.net/"/>
+<property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+<property name="java.vendor.version" value="18.9"/>
+<property name="java.version" value="11.0.13"/>
+<property name="java.version.date" value="2021-10-19"/>
+<property name="java.vm.compressedOopsMode" value="Zero based"/>
+<property name="java.vm.info" value="mixed mode"/>
+<property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="11"/>
+<property name="java.vm.vendor" value="Oracle Corporation"/>
+<property name="java.vm.version" value="11.0.13+10-LTS-370"/>
+<property name="jdk.debug" value="release"/>
+<property name="line.separator" value="
+"/>
+<property name="localRepository" value="C:\Users\dired\.m2\repository"/>
+<property name="os.arch" value="amd64"/>
+<property name="os.name" value="Windows 10"/>
+<property name="os.version" value="10.0"/>
+<property name="path.separator" value=";"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="C:\Java\jdk-11.0.13\bin"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.cpu.isalist" value="amd64"/>
+<property name="sun.desktop" value="windows"/>
+<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+<property name="sun.java.command" value="C:\Users\dired\AppData\Local\Temp\surefire4401796139244582468\surefirebooter11641469758716348951.jar C:\Users\dired\AppData\Local\Temp\surefire4401796139244582468 2022-10-21T14-47-24_500-jvmRun1 surefire6479204606662191212tmp surefire_01490536028566074270tmp"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="Cp1252"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="sun.os.patch.level" value=""/>
+<property name="surefire.real.class.path" value="C:\Users\dired\AppData\Local\Temp\surefire4401796139244582468\surefirebooter11641469758716348951.jar"/>
+<property name="surefire.test.class.path" value="C:\Github\automation-frameworks-integration\samples\java\junit5\target\test-classes;C:\Github\automation-frameworks-integration\samples\java\junit5\target\classes;C:\Users\dired\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\dired\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\dired\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\dired\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dired\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\dired\.m2\repository\com\testrail\testrail-junit-extensions\0.1.0\testrail-junit-extensions-0.1.0.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-suite-api\1.7.1\junit-platform-suite-api-1.7.1.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-reporting\1.7.1\junit-platform-reporting-1.7.1.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-launcher\1.7.1\junit-platform-launcher-1.7.1.jar;C:\Users\dired\.m2\repository\org\junit\platform\junit-platform-runner\1.7.1\junit-platform-runner-1.7.1.jar;C:\Users\dired\.m2\repository\junit\junit\4.13\junit-4.13.jar;C:\Users\dired\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+<property name="user.country" value="US"/>
+<property name="user.country.format" value="150"/>
+<property name="user.dir" value="C:\Github\automation-frameworks-integration\samples\java\junit5"/>
+<property name="user.home" value="C:\Users\dired"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="dired"/>
+<property name="user.script" value=""/>
+<property name="user.timezone" value="Europe/London"/>
+<property name="user.variant" value=""/>
+</properties>
+<testcase name="SubtractTwoNumbers" classname="com.idera.testrail.tests.SubtractionTests" time="0" started-at="2022-10-21T13:47:25.8047443" finished-at="2022-10-21T13:47:25.8054636">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.idera.testrail.tests.SubtractionTests]/[method:SubtractTwoNumbers()]
+display-name: Subtract Two Numbers
+]]></system-out>
+<properties>
+<property name="test_summary" value="Subtract Two Numbers"/>
+</properties>
+</testcase>
+<testcase name="AddTwoNumbers" classname="com.idera.testrail.tests.SumTests" time="0" started-at="2022-10-21T13:47:25.8293162" finished-at="2022-10-21T13:47:25.8293162">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.idera.testrail.tests.SumTests]/[method:AddTwoNumbers()]
+display-name: Add Two Numbers
+]]></system-out>
+<properties>
+<property name="test_summary" value="Add Two Numbers"/>
+</properties>
+</testcase>
+<testcase name="MultiplyTwoNumbers" classname="com.idera.testrail.tests.MultiplicationTests" time="0" started-at="2022-10-21T13:47:25.7785422" finished-at="2022-10-21T13:47:25.801023">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.idera.testrail.tests.MultiplicationTests]/[method:MultiplyTwoNumbers()]
+display-name: MultiplyTwoNumbers()
+]]></system-out>
+<properties>
+</properties>
+</testcase>
+<testcase name="AddTwoNumbersWithDecimals" classname="com.idera.testrail.tests.SumTests" time="0" started-at="2022-10-21T13:47:25.8109824" finished-at="2022-10-21T13:47:25.8213319">
+<failure message="1.5+1.4 should equal 3 ==&gt; expected: &lt;3.0&gt; but was: &lt;2.9&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 1.5+1.4 should equal 3 ==> expected: <3.0> but was: <2.9>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:70)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:925)
+	at com.idera.testrail.tests.SumTests.AddTwoNumbersWithDecimals(SumTests.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.idera.testrail.tests.SumTests]/[method:AddTwoNumbersWithDecimals(com.testrail.junit.customjunitxml.TestRailTestReporter)]
+display-name: Add Two Numbers With Decimals
+]]></system-out>
+<system-out><![CDATA[
+
+]]></system-out>
+<properties>
+<property name="test_summary" value="Add Two Numbers With Decimals"/>
+<property name="testrail_attachment" value="sample_reports/testrail.jpg"/>
+</properties>
+</testcase>
+<testcase name="AddThreeNumbers" classname="com.idera.testrail.tests.SumTests$AddMoreNumbersTests" time="0" started-at="2022-10-21T13:47:25.8318972" finished-at="2022-10-21T13:47:25.8328237">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.idera.testrail.tests.SumTests]/[nested-class:AddMoreNumbersTests]/[method:AddThreeNumbers()]
+display-name: Add Three Numbers
+]]></system-out>
+<properties>
+<property name="test_summary" value="Add Three Numbers"/>
+</properties>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>

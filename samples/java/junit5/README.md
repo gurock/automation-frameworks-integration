@@ -13,12 +13,9 @@ pip install trcli
 mvn clean compile
 
 # Run tests
-mvn clean compile surefire-report:report site
-
-# Merge reports
-junitparser merge --glob "./target/surefire-reports/TEST-*"  "./target/surefire-reports/junit-report.xml"
+mvn mvn clean compile test
 
 # Upload test results
-trcli -y -c "trcli-config.yml" parse_junit -f "./target/surefire-reports/junit-report.xml"
+trcli -y -c "trcli-config.yml" parse_junit -f "./target/TEST-junit-jupiter.xml"
 
 ```
