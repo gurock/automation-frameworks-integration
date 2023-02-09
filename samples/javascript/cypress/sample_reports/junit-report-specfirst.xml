@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites tests="6" failures="1" errors="0" skipped="0" time="1.895"><testsuite name="Root Suite" timestamp="2023-02-09T18:53:57" tests="0" file="cypress\e2e\spec_first\todo_smoke.cy.js" time="0" failures="0" errors="0" skipped="0">
+  </testsuite>
+  <testsuite name="[smoke] example to-do app" timestamp="2023-02-09T18:53:57" tests="1" time="0.353" failures="0" errors="0" skipped="0">
+    <testcase name="[smoke] example to-do app [C1] displays two todo items by default" time="0.353" classname="[C1] displays two todo items by default">
+    </testcase>
+  </testsuite>
+<testsuite name="Root Suite" timestamp="2023-02-09T18:53:46" tests="0" file="cypress\e2e\spec_first\todo_interactions.cy.js" time="0" failures="0" errors="0" skipped="0">
+  </testsuite>
+  <testsuite name="[interactions] example to-do app" timestamp="2023-02-09T18:53:46" tests="2" time="0.912" failures="0" errors="0" skipped="0">
+    <testcase name="[interactions] example to-do app [C2] can add new todo items" time="0.625" classname="[C2] can add new todo items">
+    </testcase>
+    <testcase name="[interactions] example to-do app [C3] can check off an item as completed" time="0.287" classname="[C3] can check off an item as completed">
+    </testcase>
+  </testsuite>
+  <testsuite name="with a checked task" timestamp="2023-02-09T18:53:49" tests="3" time="0.63" failures="1" errors="0" skipped="0">
+    <testcase name="[interactions] example to-do app with a checked task [C4] can filter for uncompleted tasks" time="0.328" classname="[C4] can filter for uncompleted tasks">
+    </testcase>
+    <testcase name="[interactions] example to-do app with a checked task [C5] can filter for completed tasks" time="0.302" classname="[C5] can filter for completed tasks">
+    </testcase>
+    <testcase name="[interactions] example to-do app with a checked task [C6] can delete all completed tasks" time="0.000" classname="[C6] can delete all completed tasks">
+      <failure message="Timed out retrying after 4000ms: Not enough elements found. Found '1', expected '2'." type="AssertionError">AssertionError: Timed out retrying after 4000ms: Not enough elements found. Found '1', expected '2'.
+    at Context.eval (webpack:///./cypress/e2e/spec_first/todo_interactions.cy.js:57:9)
+
+      + expected - actual
+
+      -1
+      +2
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>
