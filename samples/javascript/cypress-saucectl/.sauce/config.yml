@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: cypress
+defaults:
+  mode: sauce
+sauce:
+  region: us-west-1
+  concurrency: 10 # Controls how many suites are executed at the same time.
+  metadata:
+    tags:
+      - e2e
+      - release team
+      - other tag
+    build: Automated tests run 1
+docker:
+  # Affects how test files are transferred to the docker container when using the docker mode.
+  fileTransfer: copy # Choose between mount|copy.
+cypress:
+  version: 10.7.0 # See https://docs.saucelabs.com/dev/cli/saucectl/#supported-frameworks-and-browsers for a list of supported versions.
+  configFile: "cypress.config.js"
+
+reporters:
+  junit:
+    enabled: true
+    filename: saucectl-report.xml
+
+#  npm:
+#    dependencies:
+#      - "cypress-mochawesome-reporter"
+
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
+suites:
+  - name: "Chrome" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
+    browser: "chrome"
+    platformName: "Windows 11" # Only relevant when running a test against the sauce cloud mode.
+    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
+    shard: spec # (optional) Allocate one VM per spec for a high degree of parallelism.
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
+  - name: "Firefox" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
+    browser: "firefox"
+    platformName: "Windows 11" # Only relevant when running a test against the sauce cloud mode.
+    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
+    shard: spec # (optional) Allocate one VM per spec for a high degree of parallelism.
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - console.log
+    directory: ./artifacts/

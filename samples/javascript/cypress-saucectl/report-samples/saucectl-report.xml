@@ -1,0 +1,54 @@
+<testsuites tests="8">
+  <testsuite name="Firefox - cypress/e2e/examples/traversal.cy.js" tests="1" time="48">
+    <properties>
+      <property name="url" value="https://app.saucelabs.com/tests/7d7544f09a47428fb97ee53d1a5b1419"/>
+      <property name="browser" value="firefox 108"/>
+      <property name="platform" value="Windows 11"/>
+    </properties>
+    <testcase name="Traversal .children() - get children of DOM elements" time="0.9450" classname=".children() - get children of DOM elements"/>
+  </testsuite>
+  <testsuite name="Firefox - cypress/e2e/examples/assertions.cy.js" tests="1" time="80">
+    <properties>
+      <property name="url" value="https://app.saucelabs.com/tests/cbb864e049c645e1a96d56e953fe33f0"/>
+      <property name="browser" value="firefox 108"/>
+      <property name="platform" value="Windows 11"/>
+    </properties>
+    <testcase name="Assertions .and() - chain multiple assertions together" time="0.9670" classname=".and() - chain multiple assertions together"/>
+  </testsuite>
+  <testsuite name="Firefox - cypress/e2e/examples/actions.cy.js" tests="2" time="103">
+    <properties>
+      <property name="url" value="https://app.saucelabs.com/tests/218aa25ce9724844b99801caf964481a"/>
+      <property name="browser" value="firefox 108"/>
+      <property name="platform" value="Windows 11"/>
+    </properties>
+    <testcase name="Actions .type() - type into a DOM element" time="1.1730" classname=".type() - type into a DOM element"/>
+    <testcase name="Actions .type() - type into another DOM element" time="1.3010" classname=".type() - type into another DOM element"/>
+  </testsuite>
+  <testsuite name="Chrome - cypress/e2e/examples/traversal.cy.js" tests="1" time="114">
+    <properties>
+      <property name="url" value="https://app.saucelabs.com/tests/349cf779c0f94e649f7ea6ccc42e1753"/>
+      <property name="browser" value="chrome 106"/>
+      <property name="platform" value="Windows 11"/>
+    </properties>
+    <testcase name="Traversal .children() - get children of DOM elements" time="0.7500" classname=".children() - get children of DOM elements">
+      <failure type="element not found" message="Fail due to...">stacktrace...</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Chrome - cypress/e2e/examples/actions.cy.js" tests="2" time="83">
+    <properties>
+      <property name="url" value="https://app.saucelabs.com/tests/4d251252fb694993a402a6af46d8f50f"/>
+      <property name="browser" value="chrome 106"/>
+      <property name="platform" value="Windows 11"/>
+    </properties>
+    <testcase name="Actions .type() - type into a DOM element" time="1.3760" classname=".type() - type into a DOM element"/>
+    <testcase name="Actions .type() - type into another DOM element" time="1.3630" classname=".type() - type into another DOM element"/>
+  </testsuite>
+  <testsuite name="Chrome - cypress/e2e/examples/assertions.cy.js" tests="1" time="33">
+    <properties>
+      <property name="url" value="https://app.saucelabs.com/tests/c0e3ddae1e104b86b940ed7e8026ff83"/>
+      <property name="browser" value="chrome 106"/>
+      <property name="platform" value="Windows 11"/>
+    </properties>
+    <testcase name="Assertions .and() - chain multiple assertions together" time="0.7570" classname=".and() - chain multiple assertions together"/>
+  </testsuite>
+</testsuites>
