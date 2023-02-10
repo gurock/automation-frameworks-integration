@@ -1,18 +1,56 @@
-<testsuites id="" name="" tests="5" failures="1" skipped="0" errors="0" time="8.87287600004673">
-<testsuite name="demo-todo-app.spec.js" timestamp="1666345925410" hostname="" tests="5" failures="1" skipped="0" time="14.256" errors="0">
-<testcase name="New Todo should allow me to add todo items" classname="demo-todo-app.spec.js › New Todo › should allow me to add todo items" time="2.112">
-</testcase>
-<testcase name="New Todo should clear text input field when an item is added" classname="demo-todo-app.spec.js › New Todo › should clear text input field when an item is added" time="2.047">
-</testcase>
-<testcase name="New Todo should append new items to the bottom of the list" classname="demo-todo-app.spec.js › New Todo › should append new items to the bottom of the list" time="2.233">
-</testcase>
-<testcase name="Mark all as completed should allow me to mark all items as completed" classname="demo-todo-app.spec.js › Mark all as completed › should allow me to mark all items as completed" time="7.35">
+<testsuites id="" name="" tests="6" failures="1" skipped="0" errors="0" time="8.957541000008582">
+<testsuite name="smoke-tests.spec.js" timestamp="1676026304579" hostname="" tests="5" failures="1" skipped="0" time="13.324" errors="0">
+<testcase name="New Todo should allow me to add todo items" classname="smoke-tests.spec.js › New Todo › should allow me to add todo items" time="1.92">
 <properties>
-<property name="testrail_attachment" value="test-results/screenshots/screenshot-f6f2df78-0eaa-487c-a7a3-97ec6bb66a9a.png">
+<property name="testrail_case_field" value="refs:TR-1">
+</property>
+<property name="testrail_result_comment" value="1. Create first todo">
+</property>
+<property name="testrail_result_comment" value="2. Verify todo list has 1 item">
+</property>
+<property name="testrail_result_comment" value="3. Create second todo">
+</property>
+<property name="testrail_result_comment" value="4. Verify todo list has 2 items">
 </property>
 </properties>
-<failure message="demo-todo-app.spec.js:82:3 should allow me to mark all items as completed" type="FAILURE">
-<![CDATA[  demo-todo-app.spec.js:82:3 › Mark all as completed › should allow me to mark all items as completed 
+</testcase>
+<testcase name="New Todo should clear text input field when an item is added" classname="smoke-tests.spec.js › New Todo › should clear text input field when an item is added" time="1.789">
+<properties>
+<property name="testrail_case_field" value="refs:TR-2">
+</property>
+<property name="testrail_result_comment" value="1. Create todo item">
+</property>
+<property name="testrail_result_comment" value="2. Verify todo item input is empty">
+</property>
+</properties>
+</testcase>
+<testcase name="New Todo should append new items to the bottom of the list" classname="smoke-tests.spec.js › New Todo › should append new items to the bottom of the list" time="2.009">
+<properties>
+<property name="testrail_case_field" value="refs:TR-3,TR-4">
+</property>
+<property name="testrail_result_comment" value="1. Create 3 todo items">
+</property>
+<property name="testrail_result_comment" value="2. Check all items individually">
+</property>
+<property name="testrail_result_comment" value="3. Check all items at once">
+</property>
+</properties>
+</testcase>
+<testcase name="Mark all as completed should allow me to mark all items as completed" classname="smoke-tests.spec.js › Mark all as completed › should allow me to mark all items as completed" time="7.065">
+<properties>
+<property name="testrail_case_field" value="refs:TR-5">
+</property>
+<property name="testrail_result_field" value="defects:TR-31">
+</property>
+<property name="testrail_result_comment" value="1. Complete all todo items">
+</property>
+<property name="testrail_result_comment" value="2. Verify all todos are complete">
+</property>
+<property name="testrail_attachment" value="test-results/screenshots/screenshot-ac440462-3687-4dac-ac98-ec750ffa58d4.png">
+</property>
+</properties>
+<failure message="smoke-tests.spec.js:100:3 should allow me to mark all items as completed" type="FAILURE">
+<![CDATA[  smoke-tests.spec.js:100:3 › Mark all as completed › should allow me to mark all items as completed 
 
     Error: expect(received).toHaveClass(expected) // deep equality
 
@@ -33,19 +71,43 @@
       -   selector resolved to 3 elements
 
 
-      85 |
-      86 |     // Ensure all todos have 'completed' class.
-    > 87 |     await expect(page.locator('.todo-list li')).toHaveClass(['complete', 'complete', 'complete']);
-         |                                                 ^
-      88 |     await checkNumberOfCompletedTodosInLocalStorage(page, 3);
-      89 |   });
-      90 |
+      110 |     // Ensure all todos have 'completed' class.
+      111 |     testInfo.annotations.push({ type: 'testrail_result_comment', description: "2. Verify all todos are complete" });
+    > 112 |     await expect(page.locator('.todo-list li')).toHaveClass(['complete', 'complete', 'complete']);
+          |                                                 ^
+      113 |     await checkNumberOfCompletedTodosInLocalStorage(page, 3);
+      114 |   });
+      115 |
 
-        at C:\Github\automation-frameworks-integration\samples\javascript\playwright\tests\demo-todo-app.spec.js:87:49
+        at C:\Github\automation-frameworks-integration\samples\javascript\playwright\tests\smoke-tests.spec.js:112:49
 ]]>
 </failure>
 </testcase>
-<testcase name="Mark all as completed should allow me to clear the complete state of all items" classname="demo-todo-app.spec.js › Mark all as completed › should allow me to clear the complete state of all items" time="0.514">
+<testcase name="Mark all as completed should allow me to clear the complete state of all items" classname="smoke-tests.spec.js › Mark all as completed › should allow me to clear the complete state of all items" time="0.541">
+<properties>
+<property name="testrail_case_field" value="refs:TR-6">
+</property>
+<property name="testrail_result_comment" value="1. Check and uncheck todo">
+</property>
+<property name="testrail_result_comment" value="2. Verify todo is not checked">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="todo-tests.spec.js" timestamp="1676026304579" hostname="" tests="1" failures="0" skipped="0" time="0.475" errors="0">
+<testcase name="New Todo should allow me to add and check todo items" classname="todo-tests.spec.js › New Todo › should allow me to add and check todo items" time="0.475">
+<properties>
+<property name="testrail_case_field" value="refs:TR-1">
+</property>
+<property name="testrail_result_comment" value="1. Create first todo">
+</property>
+<property name="testrail_result_comment" value="2. Verify todo list has 1 item">
+</property>
+<property name="testrail_result_comment" value="3. Create second todo">
+</property>
+<property name="testrail_result_comment" value="4. Verify todo list has 2 items">
+</property>
+</properties>
 </testcase>
 </testsuite>
 </testsuites>
