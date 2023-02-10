@@ -8,7 +8,7 @@ The tests in this project exist under the path `cypress/e2e` and there are two s
 
 
 ## 1. Code-first
-If you want your test cases to be automatically created in TestRail and not worry about mapping them manually, you don't need to do any modifications to the way you usually write your automated test cases. You can see sample tests in the `cypress/e2e/code_first` folder.
+If you want your test cases to be automatically created in TestRail and not worry about mapping them manually, you don't need to do any modifications to the way you usually write your automated test cases. You can see sample tests in the `cypress/e2e/code_first` folder. You will want to use the `-y` option with this approach to allow all test entities to be automatically created.
 
 Executing the script below will:
 1. Install all dependencies 
@@ -38,7 +38,7 @@ it('[C1] displays two todo items by default', () => {
     // (...)
   })
 ```
-From a TestRail CLI perspective, in order to use this approach, all you need to do is add the `--case-matcher "name"` option.
+From a TestRail CLI perspective, in order to use this approach, all you need to do is add the `--case-matcher "name"` option. We also recommend using the `-n` option, so that cases that do not have a match in TestRail are not automaticaclly created, potentially creating duplication.
 
 Executing the script below will:
 1. Install all dependencies 
@@ -58,5 +58,5 @@ npx cypress run --reporter junit --reporter-options "mochaFile=reports/specfirst
 
 # Upload test results
 junitparser merge --glob "reports/specfirst-*" "reports/junit-report-specfirst.xml"
-trcli -y -c "trcli-config.yml" parse_junit -f "reports/junit-report-specfirst.xml" --case-matcher "name"
+trcli -n -c "trcli-config.yml" parse_junit -f "reports/junit-report-specfirst.xml" --case-matcher "name"
 ```
