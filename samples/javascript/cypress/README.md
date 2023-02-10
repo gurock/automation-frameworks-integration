@@ -38,7 +38,7 @@ it('[C1] displays two todo items by default', () => {
     // (...)
   })
 ```
-From a TestRail CLI perspective, in order to use this approach, all you need to do is add the `--case-matcher "name"` option. We also recommend using the `-n` option, so that cases that do not have a match in TestRail are not automaticaclly created, potentially creating duplication.
+To try out this project, you should first replace the test case IDs with valid IDs from your TestRail project. From a TestRail CLI perspective, in order to use this approach, all you need to do is add the `--case-matcher "name"` option. We also recommend using the `-n` option, so that cases that do not have a match in TestRail are not automaticaclly created, potentially creating duplication.
 
 Executing the script below will:
 1. Install all dependencies 
