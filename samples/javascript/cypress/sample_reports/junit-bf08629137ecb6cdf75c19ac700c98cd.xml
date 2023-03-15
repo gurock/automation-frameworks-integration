@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="7.408" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2023-03-15T12:36:28" tests="0" file="cypress\e2e\todo_app\todo_interactions.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="[interactions] Todo app list with a checked task" timestamp="2023-03-15T12:36:28" tests="3" time="7.392" failures="1">
+    <testcase name="[interactions] Todo app list with a checked task can filter for uncompleted tasks" time="0.886" classname="can filter for uncompleted tasks">
+    </testcase>
+    <testcase name="[interactions] Todo app list with a checked task can filter for completed tasks" time="0.308" classname="can filter for completed tasks">
+    </testcase>
+    <testcase name="[interactions] Todo app list with a checked task can delete all completed tasks" time="0.000" classname="can delete all completed tasks">
+      <failure message="Timed out retrying after 4000ms: Not enough elements found. Found &apos;1&apos;, expected &apos;2&apos;." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Not enough elements found. Found '1', expected '2'.
+    at Context.eval (webpack:///./cypress/e2e/todo_app/todo_interactions.cy.js:34:7)
+
+      + expected - actual
+
+      -1
+      +2
+      ]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
