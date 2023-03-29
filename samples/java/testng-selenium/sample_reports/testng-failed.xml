@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestRail suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="TestRail Tests (failed)" verbose="0">
+    <classes>
+      <class name="com.idera.testrail.tests.HomePageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="invalidTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.idera.testrail.tests.HomePageTest -->
+    </classes>
+  </test> <!-- TestRail Tests (failed) -->
+</suite> <!-- Failed suite [TestRail suite] -->

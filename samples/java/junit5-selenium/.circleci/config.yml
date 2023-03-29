@@ -1,0 +1,51 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.4.1
+working_directory: ~/automation-framework-integration
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/openjdk:15.0
+    steps:
+      - browser-tools/install-browser-tools:
+          chrome-version: 109.0.5414.74
+      # Checkout the code as the first step.
+      - checkout
+      # Build and run the tests
+      - run:
+          name: Build and run the tests
+          command: |
+            mvn clean compile test
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - target/TEST-junit-jupiter.xml
+  install-trcli-and-parse-results:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - attach_workspace:
+          at: ./automation-framework-integration
+      - run:
+          name: Install TR CLI and upload the test results to TestRail
+          command: |
+            pip install trcli
+            trcli -y \
+             -h https://INSTANCE.testrail.io/ \
+             --project "PROJECT NAME" \
+             -u USER_EMAIL \
+             -p PASSWORD \
+             parse_junit \
+             --title "JUnit5 Selenium Automated Test Run" \
+             --run-description $CIRCLE_BUILD_URL \
+             -f "./automation-framework-integration/target/TEST-junit-jupiter.xml"
+# Invoke jobs via workflows
+workflows:
+  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+    jobs:
+      - build-and-test
+      - install-trcli-and-parse-results:
+          requires:
+            - build-and-test
