@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-04T12:45:40 CEST" name="TestRail suite" finished-at="2023-04-04T12:46:15 CEST" duration-ms="34674">
+    <groups>
+    </groups>
+    <test started-at="2023-04-04T12:45:40 CEST" name="TestRail Tests " finished-at="2023-04-04T12:46:15 CEST" duration-ms="34674">
+      <class name="com.idera.testrail.tests.HomePageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:45:40 CEST" name="setup" finished-at="2023-04-04T12:46:02 CEST" duration-ms="21898" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="invalidTest()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:46:02 CEST" name="invalidTest" finished-at="2023-04-04T12:46:02 CEST" duration-ms="17" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
+at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
+at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
+at com.idera.testrail.tests.HomePageTest.invalidTest(HomePageTest.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:46:02 CEST" name="tearDown" finished-at="2023-04-04T12:46:03 CEST" duration-ms="593" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:46:03 CEST" name="setup" finished-at="2023-04-04T12:46:08 CEST" duration-ms="5711" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyPresenceOfDemoLinkOnHomePage()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:46:08 CEST" name="verifyPresenceOfDemoLinkOnHomePage" finished-at="2023-04-04T12:46:09 CEST" duration-ms="165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPresenceOfDemoLinkOnHomePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:46:09 CEST" name="tearDown" finished-at="2023-04-04T12:46:09 CEST" duration-ms="589" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:46:09 CEST" name="setup" finished-at="2023-04-04T12:46:14 CEST" duration-ms="5083" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyTitleOfHomePage()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:46:14 CEST" name="verifyTitleOfHomePage" finished-at="2023-04-04T12:46:14 CEST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTitleOfHomePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.idera.testrail.tests.HomePageTest@74d1dc36]" started-at="2023-04-04T12:46:14 CEST" name="tearDown" finished-at="2023-04-04T12:46:15 CEST" duration-ms="564" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.idera.testrail.tests.HomePageTest -->
+    </test> <!-- TestRail Tests  -->
+  </suite> <!-- TestRail suite -->
+</testng-results>

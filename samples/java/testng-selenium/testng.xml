@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestRail suite"  parallel="none"  >
+    <test name="TestRail Tests" >
+        <classes>
+            <class name ="com.idera.testrail.tests.HomePageTest" ></class>
+        </classes>
+    </test>
+</suite>

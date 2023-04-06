@@ -1,0 +1,21 @@
+dist: xenial
+jobs:
+  include:
+    - language: python
+      python: 3.9-dev
+      addons:
+       chrome: stable
+      stage: Run tests and upload results to TestRail
+      script:
+        - mvn clean compile test
+      after_script :
+        - pip install trcli
+        - trcli -y 
+           -h https://INSTANCE.testrail.io/ 
+           --project "PROJECT NAME" 
+           -u USER_EMAIL 
+           -p PASSWORD
+           parse_junit 
+           --title "TestNG Selenium Automated Test Run" 
+           --run-description $TRAVIS_JOB_WEB_URL 
+           -f "./target/surefire-reports/TEST-TestSuite.xml"
