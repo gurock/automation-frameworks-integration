@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.10 on win32)" generated="20230426 18:43:02.237" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\U6048718\robotframework\tests">
+<suite id="s1-s1" name="Homepage-Tests" source="C:\Users\U6048718\robotframework\tests\homepage-tests.robot">
+<test id="s1-s1-t1" name="Website Launch Test" line="5">
+<kw name="New Page" library="Browser">
+<arg>https://playwright.dev</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230426 18:43:08.709" level="INFO">Successfully initialized new page object and opened url: https://playwright.dev</msg>
+<msg timestamp="20230426 18:43:08.709" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20230426 18:43:03.006" endtime="20230426 18:43:08.709"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>h1</arg>
+<arg>contains</arg>
+<arg>Playwright</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230426 18:43:08.780" level="INFO">Text: 'Playwright enables reliable end-to-end testing for modern web apps.'</msg>
+<status status="PASS" starttime="20230426 18:43:08.710" endtime="20230426 18:43:08.780"/>
+</kw>
+<status status="PASS" starttime="20230426 18:43:03.003" endtime="20230426 18:43:08.781"/>
+</test>
+<test id="s1-s1-t2" name="Home Page Test" line="9">
+<kw name="New Page" library="Browser">
+<arg>https://www.testrail.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230426 18:43:09.452" level="INFO">Successfully initialized new page object and opened url: https://www.testrail.com/</msg>
+<msg timestamp="20230426 18:43:09.452" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230426 18:43:08.826" endtime="20230426 18:43:09.452"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="home_hero"]/div[3]/div[2]/div[2]/div[2]/a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230426 18:43:09.452" endtime="20230426 18:43:09.788"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<arg>timeout=10s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230426 18:43:09.789" endtime="20230426 18:43:10.590"/>
+</kw>
+<kw name="Switch Page" library="Browser">
+<var>${previous}</var>
+<arg>NEW</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<msg timestamp="20230426 18:43:10.591" level="INFO">Switching to page NEW,context CURRENT, browser CURRENT</msg>
+<msg timestamp="20230426 18:43:10.593" level="INFO">Activated new page page=011343a9-8a52-4161-a9ce-48051b35b4d9</msg>
+<msg timestamp="20230426 18:43:10.593" level="INFO">${previous} = page=36442996-1a98-4b3b-9cc3-4734710b7bae</msg>
+<status status="PASS" starttime="20230426 18:43:10.591" endtime="20230426 18:43:10.593"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>h1</arg>
+<arg>contains</arg>
+<arg>Demo</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230426 18:43:11.057" level="INFO">Text: 'TestRail Product Demo'</msg>
+<status status="PASS" starttime="20230426 18:43:10.594" endtime="20230426 18:43:11.057"/>
+</kw>
+<status status="PASS" starttime="20230426 18:43:08.822" endtime="20230426 18:43:11.058"/>
+</test>
+<test id="s1-s1-t3" name="Invalid Test" line="16">
+<kw name="New Page" library="Browser">
+<arg>https://www.testrail.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230426 18:43:11.778" level="INFO">Successfully initialized new page object and opened url: https://www.testrail.com/</msg>
+<msg timestamp="20230426 18:43:11.778" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230426 18:43:11.163" endtime="20230426 18:43:11.778"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>h1</arg>
+<arg>contains</arg>
+<arg>InvalidText</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230426 18:43:13.221" level="INFO">Text: 'Orchestrate Testing.\nElevate Quality.'</msg>
+<msg timestamp="20230426 18:43:13.382" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230426 18:43:13.382" level="FAIL">Text 'Orchestrate Testing.
+Elevate Quality.' (str) should contain 'InvalidText' (str)</msg>
+<status status="FAIL" starttime="20230426 18:43:11.779" endtime="20230426 18:43:13.384"/>
+</kw>
+<status status="FAIL" starttime="20230426 18:43:11.160" endtime="20230426 18:43:13.385">Text 'Orchestrate Testing.
+Elevate Quality.' (str) should contain 'InvalidText' (str)</status>
+</test>
+<status status="FAIL" starttime="20230426 18:43:02.256" endtime="20230426 18:43:13.426"/>
+</suite>
+<status status="FAIL" starttime="20230426 18:43:02.237" endtime="20230426 18:43:13.431"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="1" skip="0" id="s1-s1" name="Homepage-Tests">Tests.Homepage-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

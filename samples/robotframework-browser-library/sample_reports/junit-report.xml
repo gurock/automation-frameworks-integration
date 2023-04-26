@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests" tests="3" errors="0" failures="1" skipped="0" time="11.194" timestamp="2023-04-26T18:43:02.237000">
+<testsuite name="Homepage-Tests" tests="3" errors="0" failures="1" skipped="0" time="11.170" timestamp="2023-04-26T18:43:02.256000">
+<testcase classname="Tests.Homepage-Tests" name="Website Launch Test" time="5.778">
+</testcase>
+<testcase classname="Tests.Homepage-Tests" name="Home Page Test" time="2.236">
+</testcase>
+<testcase classname="Tests.Homepage-Tests" name="Invalid Test" time="2.225">
+<failure message="Text 'Orchestrate Testing.&#10;Elevate Quality.' (str) should contain 'InvalidText' (str)" type="AssertionError"/>
+</testcase>
+</testsuite>
+</testsuite>
