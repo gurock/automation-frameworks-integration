@@ -2,18 +2,16 @@
 Library   Browser
 
 *** Test Cases ***
-Website Launch Test
-    New Page    https://playwright.dev
-    Get Text    h1    contains    Playwright
-
-Home Page Test
+Verify Presence Of Header Links
     New Page    https://www.testrail.com/
-    Click       xpath=//*[@id="home_hero"]/div[3]/div[2]/div[2]/div[2]/a
     Wait Until Network Is Idle    timeout=10s
-    ${previous} =  Switch Page    NEW
-    Get Text    h1    contains    Demo
+    Get Text    h1    contains    Testing
+    ${old_mode} =      Set Strict Mode    False
+    Get Element States  xpath=//a[contains(@href,"platform")]   contains    visible
+    Get Element States  xpath=//a[contains(@href,"enterprise")]   contains    visible
+    Close Browser    ALL
 
-Invalid Test
+Verify Presence Of Demo Link
     New Page    https://www.testrail.com/
-    Get Text    h1    contains    InvalidText
-    
+    Get Element States  xpath=//*[contains(@href,"invalidlocator")][1]   contains    visible
+    Close Browser    ALL

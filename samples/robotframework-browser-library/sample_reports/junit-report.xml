@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Tests" tests="3" errors="0" failures="1" skipped="0" time="11.194" timestamp="2023-04-26T18:43:02.237000">
-<testsuite name="Homepage-Tests" tests="3" errors="0" failures="1" skipped="0" time="11.170" timestamp="2023-04-26T18:43:02.256000">
-<testcase classname="Tests.Homepage-Tests" name="Website Launch Test" time="5.778">
+<testsuite name="Tests" tests="3" errors="0" failures="1" skipped="0" time="14.354" timestamp="2023-05-14T20:25:24.012000">
+<testsuite name="Footer-Test" tests="1" errors="0" failures="0" skipped="0" time="5.711" timestamp="2023-05-14T20:25:24.031000">
+<testcase classname="Tests.Footer-Test" name="Verify Presence Of Social Links" time="4.401">
 </testcase>
-<testcase classname="Tests.Homepage-Tests" name="Home Page Test" time="2.236">
+</testsuite>
+<testsuite name="Homepage-Tests" tests="2" errors="0" failures="1" skipped="0" time="8.611" timestamp="2023-05-14T20:25:29.748000">
+<testcase classname="Tests.Homepage-Tests" name="Verify Presence Of Header Links" time="4.479">
 </testcase>
-<testcase classname="Tests.Homepage-Tests" name="Invalid Test" time="2.225">
-<failure message="Text 'Orchestrate Testing.&#10;Elevate Quality.' (str) should contain 'InvalidText' (str)" type="AssertionError"/>
+<testcase classname="Tests.Homepage-Tests" name="Verify Presence Of Demo Link" time="4.049">
+<failure message="Elements states '['detached']' (list) should contain '['visible']' (list)" type="AssertionError"/>
 </testcase>
 </testsuite>
 </testsuite>
