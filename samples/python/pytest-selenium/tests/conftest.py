@@ -21,6 +21,8 @@ def setup_driver():
     """Creates webdriver for Chrome and opens the TestRail website"""
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
     driver.implicitly_wait(3)
     driver.set_page_load_timeout(10)
