@@ -19,7 +19,9 @@ def browser_driver(request, record_property):
 
 def setup_driver():
     """Creates webdriver for Chrome and opens the TestRail website"""
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--no-sandbox")
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
     driver.implicitly_wait(3)
     driver.set_page_load_timeout(10)
     driver.get('https://www.testrail.com/')
