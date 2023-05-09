@@ -1,0 +1,5 @@
+host: https://INSTANCE-NAME.testrail.io
+project: PROJECT NAME
+username: USERNAME
+password: PASSWORD
+title: Pytest Automated Test Run

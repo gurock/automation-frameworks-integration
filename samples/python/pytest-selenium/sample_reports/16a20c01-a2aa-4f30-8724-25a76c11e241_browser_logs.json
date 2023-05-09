@@ -1,0 +1,8 @@
+[
+    {
+        "level": "WARNING",
+        "message": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js?ver=6.2 9:1174 \"Element not found:\" \".bde-section-424-128\"",
+        "source": "console-api",
+        "timestamp": 1683420614149
+    }
+]
