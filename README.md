@@ -6,13 +6,18 @@ For more information on how to use the TestRail CLI, please refer to the [TestRa
 ## Sample projects
 
 - [JUnit5](https://github.com/gurock/automation-frameworks-integration/blob/main/samples/java/junit5)
+- [JUnit5 with Selenium](https://github.com/gurock/automation-frameworks-integration/blob/main/samples/java/junit5-selenium)
 - [TestNG](https://github.com/gurock/automation-frameworks-integration/blob/main/samples/java/testng)
 - [NUnit](https://github.com/gurock/automation-frameworks-integration/blob/main/samples/dotnet/nunit)
 - [Robot Framework](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/robotframework)
 - [Pytest](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/python/pytest)
+- [Pytest with Selenium](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/python/pytest-selenium)
 - [Cypress](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/javascript/cypress)
 - [Cypress with saucectl](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/javascript/cypress-saucectl)
 
+## Misc
+
+- [Jenkins docker images](https://github.com/gurock/automation-frameworks-integration/blob/main/misc/jenkins-docker)
 
 ## License
 [BSD 3-Clause License](https://github.com/gurock/automation-frameworks-integration/tree/main/LICENSE.md)
