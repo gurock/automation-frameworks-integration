@@ -1,0 +1,29 @@
+image: python:3.9
+pipelines:
+  default:
+    - step:
+        name: Build and run the tests
+        caches:
+          - pip
+        script:
+          - apt-get update && apt install -y curl
+          - curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs
+          - pip install robotframework-browser
+          - rfbrowser init
+          - npx playwright install-deps
+          - robot -d reports -x junit-report.xml "./tests" || true
+        artifacts:
+          - reports/junit-report.xml
+    - step:
+        name: Install TR CLI and upload the test results to TestRail
+        script:
+          - pip install trcli
+          - trcli -y
+            -h https://INSTANCE.testrail.io/
+            --project "PROJECT NAME"
+            -u USER_EMAIL
+            -p PASSWORD
+            parse_junit
+            --title "Automated Tests from Bitbucket workflow"
+            --run-description $BITBUCKET_GIT_HTTP_ORIGIN/pipelines/results/$BITBUCKET_BUILD_NUMBER
+            -f "reports/junit-report.xml"
