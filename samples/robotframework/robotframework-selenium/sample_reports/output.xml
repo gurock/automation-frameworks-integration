@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.5 on win32)" generated="20230515 11:50:23.044" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Github\gurock\automation-frameworks-integration\samples\robotframework\robotframework-selenium\tests">
+<suite id="s1-s1" name="Homepage-Links" source="C:\Github\gurock\automation-frameworks-integration\samples\robotframework\robotframework-selenium\tests\homepage-links.robot">
+<test id="s1-s1-t1" name="Verify Header Links" line="9">
+<kw name="Open Browser On TestRail Homepage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<var>${session}</var>
+<arg>url=https://www.gurock.com</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230515 11:50:23.211" level="INFO">Opening browser 'chrome' to base url 'https://www.gurock.com'.</msg>
+<msg timestamp="20230515 11:50:24.908" level="INFO">${session} = 1</msg>
+<status status="PASS" starttime="20230515 11:50:23.211" endtime="20230515 11:50:24.908"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230515 11:50:24.908" endtime="20230515 11:50:25.189"/>
+</kw>
+<status status="PASS" starttime="20230515 11:50:23.211" endtime="20230515 11:50:25.189"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@href='/platform/']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230515 11:50:25.190" endtime="20230515 11:50:25.343"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@href='/enterprise/']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230515 11:50:25.344" endtime="20230515 11:50:25.365"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@href='/pricing/']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230515 11:50:25.365" endtime="20230515 11:50:25.382"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230515 11:50:25.382" endtime="20230515 11:50:27.544"/>
+</kw>
+<status status="PASS" starttime="20230515 11:50:23.211" endtime="20230515 11:50:27.545"/>
+</test>
+<test id="s1-s1-t2" name="Verify Social Links" line="14">
+<kw name="Open Browser On TestRail Homepage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<var>${session}</var>
+<arg>url=https://www.gurock.com</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230515 11:50:27.547" level="INFO">Opening browser 'chrome' to base url 'https://www.gurock.com'.</msg>
+<msg timestamp="20230515 11:50:29.399" level="INFO">${session} = 2</msg>
+<status status="PASS" starttime="20230515 11:50:27.547" endtime="20230515 11:50:29.399"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230515 11:50:29.399" endtime="20230515 11:50:29.671"/>
+</kw>
+<status status="PASS" starttime="20230515 11:50:27.546" endtime="20230515 11:50:29.671"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@href='https://www.linkedin.com/company/testrail/']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230515 11:50:29.672" endtime="20230515 11:50:29.721"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230515 11:50:29.721" endtime="20230515 11:50:31.866"/>
+</kw>
+<status status="PASS" starttime="20230515 11:50:27.546" endtime="20230515 11:50:31.867"/>
+</test>
+<test id="s1-s1-t3" name="Verify Action Links" line="17">
+<kw name="Open Browser On TestRail Homepage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<var>${session}</var>
+<arg>url=https://www.gurock.com</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230515 11:50:31.869" level="INFO">Opening browser 'chrome' to base url 'https://www.gurock.com'.</msg>
+<msg timestamp="20230515 11:50:33.343" level="INFO">${session} = 3</msg>
+<status status="PASS" starttime="20230515 11:50:31.869" endtime="20230515 11:50:33.343"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230515 11:50:33.343" endtime="20230515 11:50:33.643"/>
+</kw>
+<status status="PASS" starttime="20230515 11:50:31.869" endtime="20230515 11:50:33.643"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[contains(@href,'webinar/register')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230515 11:50:33.644" endtime="20230515 11:50:33.813"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@href='/get_trial_invalid_link/']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230515 11:50:39.083" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230515 11:50:39.084" level="FAIL">Element '//*[@href='/get_trial_invalid_link/']' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230515 11:50:33.813" endtime="20230515 11:50:39.085"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230515 11:50:39.086" endtime="20230515 11:50:41.217"/>
+</kw>
+<status status="FAIL" starttime="20230515 11:50:31.869" endtime="20230515 11:50:41.218">Element '//*[@href='/get_trial_invalid_link/']' not visible after 5 seconds.</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230515 11:50:41.221" endtime="20230515 11:50:41.222"/>
+</kw>
+<doc>Simple homepage links tests</doc>
+<status status="FAIL" starttime="20230515 11:50:23.060" endtime="20230515 11:50:41.222"/>
+</suite>
+<status status="FAIL" starttime="20230515 11:50:23.045" endtime="20230515 11:50:41.225"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="1" skip="0" id="s1-s1" name="Homepage-Links">Tests.Homepage-Links</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

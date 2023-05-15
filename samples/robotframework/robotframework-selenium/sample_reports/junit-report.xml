@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests" tests="3" errors="0" failures="1" skipped="0" time="18.180" timestamp="2023-05-15T11:50:23.045000">
+<testsuite name="Homepage-Links" tests="3" errors="0" failures="1" skipped="0" time="18.162" timestamp="2023-05-15T11:50:23.060000">
+<testcase classname="Tests.Homepage-Links" name="Verify Header Links" time="4.334">
+</testcase>
+<testcase classname="Tests.Homepage-Links" name="Verify Social Links" time="4.321">
+</testcase>
+<testcase classname="Tests.Homepage-Links" name="Verify Action Links" time="9.349">
+<failure message="Element '//*[@href='/get_trial_invalid_link/']' not visible after 5 seconds." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="Simple homepage links tests"/>
+</properties>
+</testsuite>
+</testsuite>
