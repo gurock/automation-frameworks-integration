@@ -1,3 +1,5 @@
+![Tests](https://github.com/gurock/automation-frameworks-integration/actions/workflows/run-all.yml/badge.svg)
+
 # TestRail test automation frameworks integration
 Sample projects on how to integrate your favorite test automation frameworks with TestRail using the TestRail CLI.
 

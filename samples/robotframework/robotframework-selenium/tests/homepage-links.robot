@@ -21,6 +21,7 @@ Verify Action Links
 *** Keywords ***
 Open Browser On TestRail Homepage
     ${session} =    Open Browser
-    ...    url=https://www.gurock.com
+    ...    url=https://www.testrail.com
     ...    browser=chrome
-    Maximize Browser Window
+    ...    browser=headlesschrome
+    Set Window Size    1920    1080
