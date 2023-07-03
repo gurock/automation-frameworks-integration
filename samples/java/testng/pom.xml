@@ -30,7 +30,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <disableXmlReport>false</disableXmlReport>
-                    <reportsDirectory>report_sample</reportsDirectory>
+                    <reportsDirectory>reports</reportsDirectory>
                     <properties>
                         <property>
                             <name>reporter</name>
