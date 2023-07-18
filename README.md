@@ -21,6 +21,7 @@ For more information on how to use the TestRail CLI, please refer to the [TestRa
 ## Misc
 
 - [Jenkins docker images](https://github.com/gurock/automation-frameworks-integration/blob/main/misc/jenkins-docker)
+- [Azure pipelines agent image](https://github.com/gurock/automation-frameworks-integration/blob/main/misc/azure-pipelines-agent-docker)
 
 ## License
 [BSD 3-Clause License](https://github.com/gurock/automation-frameworks-integration/tree/main/LICENSE.md)
