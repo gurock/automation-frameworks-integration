@@ -1,0 +1,249 @@
+variables:
+  TESTRAIL_URL: "..."
+  USERNAME: "..."
+  PASSWORD: "..."
+  PROJECT: "..."
+
+stages:
+  - execute_automated_tests
+  - upload_test_results
+
+playwright_tests:
+  stage: execute_automated_tests
+  image: mcr.microsoft.com/playwright:v1.36.0-jammy
+  script: |
+    cd samples/javascript/playwright
+    npm install
+    npx playwright install-deps
+    npx playwright install
+    npx playwright test
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - samples/javascript/playwright/test-results/
+
+playwright_upload_results:
+  stage: upload_test_results
+  image: python:latest
+  script: |
+    cd samples/javascript/playwright
+    pip install trcli
+    trcli -y \
+      -h "$TESTRAIL_URL" \
+      -u "$USERNAME" \
+      -p "$PASSWORD" \
+      --project "$PROJECT" \
+      parse_junit \
+      -f "test-results/junit-report.xml" \
+      --title "Playwright Automated Tests" \
+      --run-description "$CI_PIPELINE_URL"
+  dependencies:
+    - playwright_tests
+
+cypress_tests:
+  stage: execute_automated_tests
+  image: cypress/base:latest
+  script: |
+    cd samples/javascript/cypress
+    npm install
+    npx cypress run --reporter junit --reporter-options mochaFile=reports/TEST-[hash].xml
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - samples/javascript/cypress/reports/
+
+cypress_upload_results:
+  stage: upload_test_results
+  image: python:latest
+  script: |
+    cd samples/javascript/cypress
+    pip install trcli
+    junitparser merge --glob "reports/TEST-*" "reports/junit-report.xml"
+    trcli -y \
+      -h "$TESTRAIL_URL" \
+      -u "$USERNAME" \
+      -p "$PASSWORD" \
+      --project "$PROJECT" \
+      parse_junit \
+      -f "reports/junit-report.xml" \
+      --title "Cypress Automated Tests" \
+      --run-description "$CI_PIPELINE_URL"
+  dependencies:
+    - cypress_tests
+
+junit5_selenium_tests:
+  stage: execute_automated_tests
+  image: maven:3.9.3-eclipse-temurin-11
+  script: |
+    CHROME_VERSION="113.0.5672.92-1" && \
+    apt-get update && \
+    wget -O google-chrome.deb "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb" && \
+    apt-get install -y -f ./google-chrome.deb && \
+    google-chrome --version && \
+    cd samples/java/junit5-selenium && \
+    mvn clean compile test
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - samples/java/junit5-selenium/target
+
+junit5_selenium_upload_results:
+  stage: upload_test_results
+  image: python:latest
+  script: |
+    cd samples/java/junit5-selenium
+    pip install trcli
+    trcli -y \
+      -h "$TESTRAIL_URL" \
+      -u "$USERNAME" \
+      -p "$PASSWORD" \
+      --project "$PROJECT" \
+      parse_junit \
+      -f "target/TEST-junit-jupiter.xml" \
+      --title "JUnit5-Selenium Automated Tests" \
+      --run-description "$CI_PIPELINE_URL"
+  dependencies:
+    - junit5_selenium_tests
+
+testng_selenium_tests:
+  stage: execute_automated_tests
+  image: maven:3.9.3-eclipse-temurin-11
+  script: |
+    CHROME_VERSION="113.0.5672.92-1" && \
+    apt-get update && \
+    wget -O google-chrome.deb "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb" && \
+    apt-get install -y -f ./google-chrome.deb && \
+    google-chrome --version && \
+    cd samples/java/testng-selenium && \
+    mvn clean compile test
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - samples/java/testng-selenium/reports
+
+testng_selenium_upload_results:
+  stage: upload_test_results
+  image: python:latest
+  script: |
+    cd samples/java/testng-selenium
+    pip install trcli
+    trcli -y \
+      -h "$TESTRAIL_URL" \
+      -u "$USERNAME" \
+      -p "$PASSWORD" \
+      --project "$PROJECT" \
+      parse_junit \
+      -f "reports/TEST-TestSuite.xml" \
+      --title "TestNG-Selenium Automated Tests" \
+      --run-description "$CI_PIPELINE_URL"
+  dependencies:
+    - testng_selenium_tests
+
+pytest_selenium_tests:
+  stage: execute_automated_tests
+  image: python:latest
+  script: |
+    CHROME_VERSION="113.0.5672.92-1" && \
+    apt-get update && \
+    wget -O google-chrome.deb "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb" && \
+    apt-get install -y -f ./google-chrome.deb && \
+    google-chrome --version && \
+    cd samples/python/pytest-selenium && \
+    pip install -r requirements.txt && \
+    pytest --junitxml "reports/junit-report.xml" "./tests"
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - samples/python/pytest-selenium/reports
+
+pytest_selenium_upload_results:
+  stage: upload_test_results
+  image: python:latest
+  script: |
+    cd samples/python/pytest-selenium
+    pip install trcli
+    trcli -y \
+      -h "$TESTRAIL_URL" \
+      -u "$USERNAME" \
+      -p "$PASSWORD" \
+      --project "$PROJECT" \
+      parse_junit \
+      -f "reports/junit-report.xml" \
+      --title "Pytest-Selenium Automated Tests" \
+      --run-description "$CI_PIPELINE_URL"
+  dependencies:
+    - pytest_selenium_tests
+
+robotframework_browser_tests:
+  stage: execute_automated_tests
+  image: python:latest
+  script: |
+    apt-get update && \
+    apt-get install -y nodejs npm && \
+    CHROME_VERSION="113.0.5672.92-1" && \
+    wget -O google-chrome.deb "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb" && \
+    apt-get install -y -f ./google-chrome.deb && \
+    google-chrome --version && \
+    cd samples/robotframework/robotframework-browser && \
+    pip install -r requirements.txt && \
+    rfbrowser init && \
+    robot -d reports -x junit-report.xml "./tests"
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - samples/robotframework/robotframework-browser/reports
+
+robotframework_browser_upload_results:
+  stage: upload_test_results
+  image: python:latest
+  script: |
+    cd samples/robotframework/robotframework-browser
+    pip install trcli
+    trcli -y \
+      -h "$TESTRAIL_URL" \
+      -u "$USERNAME" \
+      -p "$PASSWORD" \
+      --project "$PROJECT" \
+      parse_junit \
+      -f "reports/junit-report.xml" \
+      --title "RobotFramework-Browser Automated Tests" \
+      --run-description "$CI_PIPELINE_URL"
+  dependencies:
+    - robotframework_browser_tests
+
+nunit_tests:
+  stage: execute_automated_tests
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  script: |
+    cd samples/dotnet/nunit
+    dotnet build
+    dotnet test --logger:junit
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - samples/dotnet/nunit/SimpleTestProject/TestResults
+
+nunit_upload_results:
+  stage: upload_test_results
+  image: python:latest
+  script: |
+    cd samples/dotnet/nunit
+    pip install trcli
+    trcli -y \
+      -h "$TESTRAIL_URL" \
+      -u "$USERNAME" \
+      -p "$PASSWORD" \
+      --project "$PROJECT" \
+      parse_junit \
+      -f "SimpleTestProject/TestResults/TestResults.xml" \
+      --title "NUnit Automated Tests" \
+      --run-description "$CI_PIPELINE_URL"
+  dependencies:
+    - nunit_tests
