@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 5.0 (Python 3.10.5 on win32)" name="Generator">
+<meta content="Robot Framework 6.1 (Python 3.10.5 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -1150,7 +1150,7 @@ window.testdata = function () {
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
-                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1629,22 +1629,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,18180],[[4,5,6,7,[],[0,15,18162],[],[[8,0,0,[],[1,166,4334],[]],[9,0,0,[],[1,4501,4321],[]],[10,0,0,[],[0,8824,9349,11],[]]],[],[3,2,1,0]]],[],[],[3,2,1,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,20833],[[4,5,6,0,[],[1,16,5382],[],[[7,0,0,[],[1,180,5218],[]]],[],[1,1,0,0]],[8,9,10,0,[],[0,5398,15435],[],[[11,0,12,[],[1,5412,4882],[]],[13,0,14,[],[0,10294,10539,15],[]]],[],[2,1,1,0]]],[],[],[3,2,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Tests","*C:\\Github\\gurock\\automation-frameworks-integration\\samples\\robotframework\\robotframework-selenium\\tests","*../tests","*Homepage-Links","*C:\\Github\\gurock\\automation-frameworks-integration\\samples\\robotframework\\robotframework-selenium\\tests\\homepage-links.robot","*../tests/homepage-links.robot","*<p>Simple homepage links tests\x3c/p>","*Verify Header Links","*Verify Social Links","*Verify Action Links","*Element '//*[@href='/get_trial_invalid_link/']' not visible after 5 seconds."]);
+window.output["strings"] = window.output["strings"].concat(["*","*Tests","*C:\\Github\\gurock\\automation-frameworks-integration\\samples\\robotframework\\robotframework-selenium\\tests","*../tests","*Footer-Tests","*C:\\Github\\gurock\\automation-frameworks-integration\\samples\\robotframework\\robotframework-selenium\\tests\\footer-tests.robot","*../tests/footer-tests.robot","*Verify Presence Of Social Links","*Homepage-Tests","*C:\\Github\\gurock\\automation-frameworks-integration\\samples\\robotframework\\robotframework-selenium\\tests\\homepage-tests.robot","*../tests/homepage-tests.robot","*Verify Presence Of Header Links","eNqNj0EKwjAQRfeeYi4gpboLpeAVRNyG2ExxcJrEmbTi7Q21gqCCm1m9//78JrVHFOoJFc7oPAp0MWRHQSGxy32UAVzwgCGjJCFFYAoXbarUrpqRy2FqM2oWR2w7p2iLjb0BwV7NYb+um6ogv7lijUL5bsmbzRdWUEfOL7obNcfBYphIYhjKX+bq/k15icnHW7C12S6Zat7wMWSJd3GYK2DH/BwOThAmUjoxvikee213Zw==","*Verify Presence Of Demo Link","*<p>Verifies header contains link to request a demo - Intentionally failing\x3c/p>\n<ul>\n<li>testrail_attachment: C:\\Github\\gurock\\automation-frameworks-integration\\samples\\robotframework\\robotframework-selenium\\reports\\failure-1.png\x3c/li>\n\x3c/ul>","*Element 'css=.breakdance-menu-list [href*='/invalid/']' not visible after 5 seconds."]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:18","fail":1,"label":"All Tests","pass":2,"skip":0}],[],[{"elapsed":"00:00:18","fail":1,"id":"s1","label":"Tests","name":"Tests","pass":2,"skip":0},{"elapsed":"00:00:18","fail":1,"id":"s1-s1","label":"Tests.Homepage-Links","name":"Homepage-Links","pass":2,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:21","fail":1,"label":"All Tests","pass":2,"skip":0}],[],[{"elapsed":"00:00:21","fail":1,"id":"s1","label":"Tests","name":"Tests","pass":2,"skip":0},{"elapsed":"00:00:05","fail":0,"id":"s1-s1","label":"Tests.Footer-Tests","name":"Footer-Tests","pass":1,"skip":0},{"elapsed":"00:00:15","fail":1,"id":"s1-s2","label":"Tests.Homepage-Tests","name":"Homepage-Tests","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1684147823045;
+window.output["baseMillis"] = 1694098291823;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 18195;
+window.output["generated"] = 20858;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -1894,8 +1894,8 @@ function searchTests(suitePattern, testPattern, includePattern, excludePattern) 
 function scrollToSelector(base, query) {
     $('#test-details-container').css('min-height', $(window).height());
     var anchor = query ? base + '?' + encodeURIComponent(query) : base;
-    window.location.hash = '';
     window.location.hash = window.prevLocationHash = anchor;
+    document.getElementById('test-details-container').scrollIntoView();
 }
 
 function renderSelector(args, template, stats) {
