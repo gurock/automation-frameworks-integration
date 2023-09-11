@@ -6,7 +6,7 @@ name: Run all frameworks
 env:
   TESTRAIL_USER: trcli@testrail.com
   TESTRAIL_URL: https://testrail101.testrail.io/
-  PROJECT_NAME: TRCLI SAMPLES
+  PROJECT_NAME: SA - (DO NOT DELETE) TRCLI-Automation-Frameworks
 
 jobs:
 
@@ -33,9 +33,9 @@ jobs:
         run: |
           pip install trcli
           junitparser merge --glob "reports/TEST-*" "reports/junit-report.xml"
-          trcli -y -v \
+          trcli -y \
             -h ${{ env.TESTRAIL_URL }} \
-            --project "TRCLI SAMPLES" \
+            --project "${{ env.PROJECT_NAME }}" \
             -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
