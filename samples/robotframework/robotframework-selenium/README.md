@@ -13,8 +13,8 @@ pip install trcli
 pip install -r requirements.txt
 
 # Run tests
-robot -d reports -x junit-report.xml "./tests"
+robot -d reports "./tests"
 
 # Upload test results
-trcli -y -c "trcli-config.yml" parse_junit -f "reports/junit-report.xml"
+trcli -y -c "trcli-config.yml" parse_robot -f "reports/output.xml"
 ```

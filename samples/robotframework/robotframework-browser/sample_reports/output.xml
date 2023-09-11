@@ -1,154 +1,282 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.10 on win32)" generated="20230514 20:25:24.010" rpa="false" schemaversion="3">
-<suite id="s1" name="Tests" source="C:\Users\U6048718\robotframework\tests">
-<suite id="s1-s1" name="Footer-Test" source="C:\Users\U6048718\robotframework\tests\footer-test.robot">
-<test id="s1-s1-t1" name="Verify Presence Of Social Links" line="5">
+<robot generator="Robot 6.0.2 (Python 3.10.5 on win32)" generated="20230907 15:01:39.822" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Github\gurock\automation-frameworks-integration\samples\robotframework\robotframework-browser\tests">
+<suite id="s1-s1" name="Footer-Tests" source="C:\Github\gurock\automation-frameworks-integration\samples\robotframework\robotframework-browser\tests\footer-tests.robot">
+<test id="s1-s1-t1" name="Verify Presence Of Social Links" line="6">
+<kw name="Open TestRail Homepage" library="keywords">
 <kw name="New Page" library="Browser">
 <arg>https://www.testrail.com/</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<msg timestamp="20230514 20:25:28.225" level="INFO">Successfully initialized new page object and opened url: https://www.testrail.com/</msg>
-<msg timestamp="20230514 20:25:28.225" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
-<status status="PASS" starttime="20230514 20:25:25.333" endtime="20230514 20:25:28.225"/>
-</kw>
-<kw name="Get Element States" library="Browser">
-<arg>xpath=//a[contains(@href,"linkedin.com")]</arg>
-<arg>contains</arg>
-<arg>visible</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Get the active states from the element found by ``selector``.</doc>
-<msg timestamp="20230514 20:25:28.908" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
-<status status="PASS" starttime="20230514 20:25:28.229" endtime="20230514 20:25:28.908"/>
-</kw>
-<kw name="Get Element States" library="Browser">
-<arg>xpath=//a[contains(@href,"facebook.com")]</arg>
-<arg>contains</arg>
-<arg>visible</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Get the active states from the element found by ``selector``.</doc>
-<msg timestamp="20230514 20:25:29.187" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
-<status status="PASS" starttime="20230514 20:25:28.911" endtime="20230514 20:25:29.187"/>
-</kw>
-<kw name="Close Browser" library="Browser">
-<arg>ALL</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Closes the current browser.</doc>
-<msg timestamp="20230514 20:25:29.730" level="INFO">Closed all browsers</msg>
-<status status="PASS" starttime="20230514 20:25:29.188" endtime="20230514 20:25:29.730"/>
-</kw>
-<status status="PASS" starttime="20230514 20:25:25.330" endtime="20230514 20:25:29.731"/>
-</test>
-<status status="PASS" starttime="20230514 20:25:24.031" endtime="20230514 20:25:29.742"/>
-</suite>
-<suite id="s1-s2" name="Homepage-Tests" source="C:\Users\U6048718\robotframework\tests\homepage-tests.robot">
-<test id="s1-s2-t1" name="Verify Presence Of Header Links" line="5">
-<kw name="New Page" library="Browser">
-<arg>https://www.testrail.com/</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Open a new Page.</doc>
-<msg timestamp="20230514 20:25:32.196" level="INFO">Successfully initialized new page object and opened url: https://www.testrail.com/</msg>
-<msg timestamp="20230514 20:25:32.197" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
-<status status="PASS" starttime="20230514 20:25:29.759" endtime="20230514 20:25:32.197"/>
+<msg timestamp="20230907 15:01:44.733" level="INFO">Successfully initialized new page object and opened url: https://www.testrail.com/</msg>
+<msg timestamp="20230907 15:01:44.733" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20230907 15:01:40.554" endtime="20230907 15:01:44.734"/>
 </kw>
 <kw name="Wait Until Network Is Idle" library="Browser">
 <arg>timeout=10s</arg>
 <tag>HTTP</tag>
 <tag>Wait</tag>
 <doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
-<status status="PASS" starttime="20230514 20:25:32.198" endtime="20230514 20:25:33.563"/>
+<status status="PASS" starttime="20230907 15:01:44.734" endtime="20230907 15:01:46.287"/>
 </kw>
-<kw name="Get Text" library="Browser">
-<arg>h1</arg>
-<arg>contains</arg>
-<arg>Testing</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
+<kw name="Take Screenshot" library="Browser">
+<arg>homepage</arg>
 <tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<msg timestamp="20230514 20:25:33.633" level="INFO">Text: 'Orchestrate Testing.\nElevate Quality.'</msg>
-<status status="PASS" starttime="20230514 20:25:33.564" endtime="20230514 20:25:33.633"/>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20230907 15:01:46.432" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/homepage.png" target="_blank"&gt;&lt;img src="browser/screenshot/homepage.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230907 15:01:46.287" endtime="20230907 15:01:46.432"/>
 </kw>
-<kw name="Set Strict Mode" library="Browser">
-<var>${old_mode}</var>
-<arg>False</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Controls library strict mode.</doc>
-<msg timestamp="20230514 20:25:33.635" level="INFO">${old_mode} = True</msg>
-<status status="PASS" starttime="20230514 20:25:33.634" endtime="20230514 20:25:33.635"/>
+<kw name="Set TestRail Property" library="keywords">
+<arg>testrail_attachment</arg>
+<arg>reports/browser/screenshot/homepage.png</arg>
+<kw name="Set Test Documentation" library="BuiltIn">
+<arg>${\n}- ${key}: ${value}</arg>
+<arg>append=True</arg>
+<doc>Sets documentation for the current test case.</doc>
+<msg timestamp="20230907 15:01:46.433" level="INFO">Set test documentation to:
+
+- testrail_attachment: reports/browser/screenshot/homepage.png</msg>
+<status status="PASS" starttime="20230907 15:01:46.433" endtime="20230907 15:01:46.433"/>
 </kw>
+<status status="PASS" starttime="20230907 15:01:46.433" endtime="20230907 15:01:46.433"/>
+</kw>
+<status status="PASS" starttime="20230907 15:01:40.554" endtime="20230907 15:01:46.433"/>
+</kw>
+<kw name="Verify Footer Links" library="keywords">
 <kw name="Get Element States" library="Browser">
-<arg>xpath=//a[contains(@href,"platform")]</arg>
+<arg>[href*='linkedin.com/company/testrail']</arg>
 <arg>contains</arg>
 <arg>visible</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Get the active states from the element found by ``selector``.</doc>
-<msg timestamp="20230514 20:25:33.675" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
-<status status="PASS" starttime="20230514 20:25:33.635" endtime="20230514 20:25:33.675"/>
+<msg timestamp="20230907 15:01:46.511" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<status status="PASS" starttime="20230907 15:01:46.435" endtime="20230907 15:01:46.511"/>
 </kw>
 <kw name="Get Element States" library="Browser">
-<arg>xpath=//a[contains(@href,"enterprise")]</arg>
+<arg>[href*='facebook.com/testrailofficial']</arg>
 <arg>contains</arg>
 <arg>visible</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Get the active states from the element found by ``selector``.</doc>
-<msg timestamp="20230514 20:25:33.707" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
-<status status="PASS" starttime="20230514 20:25:33.675" endtime="20230514 20:25:33.707"/>
+<msg timestamp="20230907 15:01:46.538" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<status status="PASS" starttime="20230907 15:01:46.511" endtime="20230907 15:01:46.538"/>
 </kw>
-<kw name="Close Browser" library="Browser">
+<status status="PASS" starttime="20230907 15:01:46.434" endtime="20230907 15:01:46.538"/>
+</kw>
+<kw name="Close Browser" library="Browser" type="TEARDOWN">
 <arg>ALL</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<msg timestamp="20230514 20:25:34.234" level="INFO">Closed all browsers</msg>
-<status status="PASS" starttime="20230514 20:25:33.708" endtime="20230514 20:25:34.234"/>
+<msg timestamp="20230907 15:01:46.575" level="INFO">Closed all browsers</msg>
+<status status="PASS" starttime="20230907 15:01:46.539" endtime="20230907 15:01:46.575"/>
 </kw>
-<status status="PASS" starttime="20230514 20:25:29.756" endtime="20230514 20:25:34.235"/>
+<doc>
+- testrail_attachment: reports/browser/screenshot/homepage.png</doc>
+<status status="PASS" starttime="20230907 15:01:40.554" endtime="20230907 15:01:46.575"/>
 </test>
-<test id="s1-s2-t2" name="Verify Presence Of Demo Link" line="14">
+<status status="PASS" starttime="20230907 15:01:39.838" endtime="20230907 15:01:46.584"/>
+</suite>
+<suite id="s1-s2" name="Homepage-Tests" source="C:\Github\gurock\automation-frameworks-integration\samples\robotframework\robotframework-browser\tests\homepage-tests.robot">
+<test id="s1-s2-t1" name="Verify Presence Of Header Links" line="6">
+<kw name="Open TestRail Homepage" library="keywords">
 <kw name="New Page" library="Browser">
 <arg>https://www.testrail.com/</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<msg timestamp="20230514 20:25:36.691" level="INFO">Successfully initialized new page object and opened url: https://www.testrail.com/</msg>
-<msg timestamp="20230514 20:25:36.691" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
-<status status="PASS" starttime="20230514 20:25:34.244" endtime="20230514 20:25:36.691"/>
+<msg timestamp="20230907 15:01:47.615" level="INFO">Successfully initialized new page object and opened url: https://www.testrail.com/</msg>
+<msg timestamp="20230907 15:01:47.615" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20230907 15:01:46.600" endtime="20230907 15:01:47.615"/>
 </kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<arg>timeout=10s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230907 15:01:47.615" endtime="20230907 15:01:49.229"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<arg>homepage</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20230907 15:01:49.354" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/homepage.png" target="_blank"&gt;&lt;img src="browser/screenshot/homepage.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230907 15:01:49.230" endtime="20230907 15:01:49.354"/>
+</kw>
+<kw name="Set TestRail Property" library="keywords">
+<arg>testrail_attachment</arg>
+<arg>reports/browser/screenshot/homepage.png</arg>
+<kw name="Set Test Documentation" library="BuiltIn">
+<arg>${\n}- ${key}: ${value}</arg>
+<arg>append=True</arg>
+<doc>Sets documentation for the current test case.</doc>
+<msg timestamp="20230907 15:01:49.355" level="INFO">Set test documentation to:
+Verifies header contains platform and enterprise links
+- testrail_case_field: refs:TR-1
+- testrail_case_field: priority_id:2
+- testrail_result_field: custom_environment:qa
+- testrail_result_field: custom_dropdown_1:3 
+- testrail_attachment: reports/browser/screenshot/homepage.png</msg>
+<status status="PASS" starttime="20230907 15:01:49.354" endtime="20230907 15:01:49.355"/>
+</kw>
+<status status="PASS" starttime="20230907 15:01:49.354" endtime="20230907 15:01:49.355"/>
+</kw>
+<status status="PASS" starttime="20230907 15:01:46.599" endtime="20230907 15:01:49.355"/>
+</kw>
+<kw name="Verify Header Main Links" library="keywords">
 <kw name="Get Element States" library="Browser">
-<arg>xpath=//*[contains(@href,"invalidlocator")][1]</arg>
+<arg>.breakdance-menu-list [href*='/platform/']</arg>
 <arg>contains</arg>
 <arg>visible</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Get the active states from the element found by ``selector``.</doc>
-<msg timestamp="20230514 20:25:38.287" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230514 20:25:38.287" level="FAIL">Elements states '['detached']' (list) should contain '['visible']' (list)</msg>
-<status status="FAIL" starttime="20230514 20:25:36.692" endtime="20230514 20:25:38.289"/>
+<msg timestamp="20230907 15:01:49.422" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<status status="PASS" starttime="20230907 15:01:49.356" endtime="20230907 15:01:49.422"/>
 </kw>
-<kw name="Close Browser" library="Browser">
+<kw name="Get Element States" library="Browser">
+<arg>.breakdance-menu-list [href*='/enterprise/']</arg>
+<arg>contains</arg>
+<arg>visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20230907 15:01:49.450" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<status status="PASS" starttime="20230907 15:01:49.422" endtime="20230907 15:01:49.451"/>
+</kw>
+<kw name="Set TestRail Property" library="keywords">
+<arg>testrail_result_comment</arg>
+<arg>All links are visible</arg>
+<kw name="Set Test Documentation" library="BuiltIn">
+<arg>${\n}- ${key}: ${value}</arg>
+<arg>append=True</arg>
+<doc>Sets documentation for the current test case.</doc>
+<msg timestamp="20230907 15:01:49.451" level="INFO">Set test documentation to:
+Verifies header contains platform and enterprise links
+- testrail_case_field: refs:TR-1
+- testrail_case_field: priority_id:2
+- testrail_result_field: custom_environment:qa
+- testrail_result_field: custom_dropdown_1:3 
+- testrail_attachment: reports/browser/screenshot/homepage.png 
+- testrail_result_comment: All links are visible</msg>
+<status status="PASS" starttime="20230907 15:01:49.451" endtime="20230907 15:01:49.451"/>
+</kw>
+<status status="PASS" starttime="20230907 15:01:49.451" endtime="20230907 15:01:49.451"/>
+</kw>
+<status status="PASS" starttime="20230907 15:01:49.356" endtime="20230907 15:01:49.451"/>
+</kw>
+<kw name="Close Browser" library="Browser" type="TEARDOWN">
+<arg>ALL</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20230514 20:25:38.290" endtime="20230514 20:25:38.290"/>
+<msg timestamp="20230907 15:01:49.490" level="INFO">Closed all browsers</msg>
+<status status="PASS" starttime="20230907 15:01:49.452" endtime="20230907 15:01:49.490"/>
 </kw>
-<status status="FAIL" starttime="20230514 20:25:34.242" endtime="20230514 20:25:38.291">Elements states '['detached']' (list) should contain '['visible']' (list)</status>
+<doc>Verifies header contains platform and enterprise links
+- testrail_case_field: refs:TR-1
+- testrail_case_field: priority_id:2
+- testrail_result_field: custom_environment:qa
+- testrail_result_field: custom_dropdown_1:3 
+- testrail_attachment: reports/browser/screenshot/homepage.png 
+- testrail_result_comment: All links are visible</doc>
+<status status="PASS" starttime="20230907 15:01:46.597" endtime="20230907 15:01:49.491"/>
 </test>
-<status status="FAIL" starttime="20230514 20:25:29.748" endtime="20230514 20:25:38.359"/>
+<test id="s1-s2-t2" name="Verify Presence Of Demo Link" line="15">
+<kw name="Open TestRail Homepage" library="keywords">
+<kw name="New Page" library="Browser">
+<arg>https://www.testrail.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230907 15:01:50.512" level="INFO">Successfully initialized new page object and opened url: https://www.testrail.com/</msg>
+<msg timestamp="20230907 15:01:50.512" level="INFO">No browser and context was open. New browser and context was automatically opened when page is created.</msg>
+<status status="PASS" starttime="20230907 15:01:49.500" endtime="20230907 15:01:50.513"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<arg>timeout=10s</arg>
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230907 15:01:50.513" endtime="20230907 15:01:52.097"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<arg>homepage</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20230907 15:01:52.210" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/homepage.png" target="_blank"&gt;&lt;img src="browser/screenshot/homepage.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230907 15:01:52.097" endtime="20230907 15:01:52.211"/>
+</kw>
+<kw name="Set TestRail Property" library="keywords">
+<arg>testrail_attachment</arg>
+<arg>reports/browser/screenshot/homepage.png</arg>
+<kw name="Set Test Documentation" library="BuiltIn">
+<arg>${\n}- ${key}: ${value}</arg>
+<arg>append=True</arg>
+<doc>Sets documentation for the current test case.</doc>
+<msg timestamp="20230907 15:01:52.211" level="INFO">Set test documentation to:
+Verifies header contains link to request a demo - Intentionally failing 
+- testrail_attachment: reports/browser/screenshot/homepage.png</msg>
+<status status="PASS" starttime="20230907 15:01:52.211" endtime="20230907 15:01:52.211"/>
+</kw>
+<status status="PASS" starttime="20230907 15:01:52.211" endtime="20230907 15:01:52.212"/>
+</kw>
+<status status="PASS" starttime="20230907 15:01:49.500" endtime="20230907 15:01:52.212"/>
+</kw>
+<kw name="Verify Header Demo Link" library="keywords">
+<kw name="Get Element States" library="Browser">
+<arg>.breakdance-menu-list [href*='/invalid/']</arg>
+<arg>contains</arg>
+<arg>visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20230907 15:01:53.707" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230907 15:01:53.707" level="INFO">See also file:///C:/Github/gurock/automation-frameworks-integration/samples/robotframework/robotframework-browser/reports/playwright-log.txt for additional details.</msg>
+<msg timestamp="20230907 15:01:53.707" level="FAIL">Elements states '['detached']' (list) should contain '['visible']' (list)</msg>
+<status status="FAIL" starttime="20230907 15:01:52.213" endtime="20230907 15:01:53.708"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>.breakdance-menu-list [href*='/invalid/']</arg>
+<arg>==</arg>
+<arg>Get Demo</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20230907 15:01:53.709" endtime="20230907 15:01:53.709"/>
+</kw>
+<status status="FAIL" starttime="20230907 15:01:52.212" endtime="20230907 15:01:53.709"/>
+</kw>
+<kw name="Click Demo Link" library="keywords">
+<status status="NOT RUN" starttime="20230907 15:01:53.710" endtime="20230907 15:01:53.710"/>
+</kw>
+<kw name="Verify Demo Page URL" library="keywords">
+<status status="NOT RUN" starttime="20230907 15:01:53.710" endtime="20230907 15:01:53.710"/>
+</kw>
+<kw name="Close Browser" library="Browser" type="TEARDOWN">
+<arg>ALL</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20230907 15:01:53.747" level="INFO">Closed all browsers</msg>
+<status status="PASS" starttime="20230907 15:01:53.711" endtime="20230907 15:01:53.747"/>
+</kw>
+<doc>Verifies header contains link to request a demo - Intentionally failing 
+- testrail_attachment: reports/browser/screenshot/homepage.png</doc>
+<status status="FAIL" starttime="20230907 15:01:49.496" endtime="20230907 15:01:53.748">Elements states '['detached']' (list) should contain '['visible']' (list)</status>
+</test>
+<status status="FAIL" starttime="20230907 15:01:46.590" endtime="20230907 15:01:53.754"/>
 </suite>
-<status status="FAIL" starttime="20230514 20:25:24.012" endtime="20230514 20:25:38.366"/>
+<status status="FAIL" starttime="20230907 15:01:39.822" endtime="20230907 15:01:53.760"/>
 </suite>
 <statistics>
 <total>
@@ -158,7 +286,7 @@
 </tag>
 <suite>
 <stat pass="2" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Footer-Test">Tests.Footer-Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Footer-Tests">Tests.Footer-Tests</stat>
 <stat pass="1" fail="1" skip="0" id="s1-s2" name="Homepage-Tests">Tests.Homepage-Tests</stat>
 </suite>
 </statistics>

@@ -1,7 +1,17 @@
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '*'
   
 name: Run all frameworks
+
+env:
+  TESTRAIL_USER: trcli@testrail.com
+  TESTRAIL_URL: https://testrail101.testrail.io/
+  PROJECT_NAME: SA - (DO NOT DELETE) TRCLI-Automation-Frameworks
 
 jobs:
 
@@ -29,13 +39,13 @@ jobs:
           pip install trcli
           junitparser merge --glob "reports/TEST-*" "reports/junit-report.xml"
           trcli -y \
-            -h "https://marketing80testing.testrail-staging.com/" \
-            --project "Automation Framework Samples" \
-            -u "trcli@testrail.com" \
+            -h ${{ env.TESTRAIL_URL }} \
+            --project "${{ env.PROJECT_NAME }}" \
+            -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "reports/junit-report.xml" \
-            --suite-id 57 \
+            --section-id "2407" \
             --title "Cypress automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -64,13 +74,13 @@ jobs:
         run: |
           pip install trcli
           trcli -y \
-            -h "https://marketing80testing.testrail-staging.com/" \
-            --project "Automation Framework Samples" \
-            -u "trcli@testrail.com" \
+            -h ${{ env.TESTRAIL_URL }} \
+            --project "${{ env.PROJECT_NAME }}" \
+            -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "test-results/junit-report.xml" \
-            --suite-id 76 \
+            --section-id "2408" \
             --title "Playwright automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -98,13 +108,13 @@ jobs:
         run: |
           pip install trcli
           trcli -y \
-            -h "https://marketing80testing.testrail-staging.com/" \
-            --project "Automation Framework Samples" \
-            -u "trcli@testrail.com" \
+            -h ${{ env.TESTRAIL_URL }} \
+            --project "${{ env.PROJECT_NAME }}" \
+            -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "target/TEST-junit-jupiter.xml" \
-            --suite-id 74 \
+            --section-id "2409" \
             --title "JUnit5 selenium automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -130,13 +140,13 @@ jobs:
         run: |
           pip install trcli
           trcli -y \
-            -h "https://marketing80testing.testrail-staging.com/" \
-            --project "Automation Framework Samples" \
-            -u "trcli@testrail.com" \
+            -h ${{ env.TESTRAIL_URL }} \
+            --project "${{ env.PROJECT_NAME }}" \
+            -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "target/TEST-junit-jupiter.xml" \
-            --suite-id 74 \
+            --section-id "2409" \
             --title "JUnit5 automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -162,13 +172,13 @@ jobs:
         run: |
           pip install trcli
           trcli -y \
-            -h "https://marketing80testing.testrail-staging.com/" \
-            --project "Automation Framework Samples" \
-            -u "trcli@testrail.com" \
+            -h ${{ env.TESTRAIL_URL }} \
+            --project "${{ env.PROJECT_NAME }}" \
+            -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "reports/TEST-TestSuite.xml" \
-            --suite-id 79 \
+            --section-id "2410" \
             --title "TestNG automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -195,13 +205,13 @@ jobs:
         run: |
           pip install trcli
           trcli -y \
-            -h "https://marketing80testing.testrail-staging.com/" \
-            --project "Automation Framework Samples" \
-            -u "trcli@testrail.com" \
+            -h ${{ env.TESTRAIL_URL }} \
+            --project "${{ env.PROJECT_NAME }}" \
+            -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "reports/junit-report.xml" \
-            --suite-id 58 \
+            --section-id "2411" \
             --title "Pytest automated tests" \
             --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -221,31 +231,24 @@ jobs:
         uses: browser-actions/setup-chrome@latest
       - name: Chrome version check
         run: chrome --version
-      - name: Setup chromedriver
-        uses: nanasess/setup-chromedriver@v2
-      - name: Config chromedriver
-        run: |
-          export DISPLAY=:99
-          chromedriver --url-base=/wd/hub &
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
       - name: Execute Robot Framework tests
         working-directory: ${{ env.WORKING_DIR }}
         continue-on-error: true
         run: |
           pip install -r requirements.txt
-          robot -d reports -x junit-report.xml "./tests"
+          robot -d reports "./tests"
       - name: Execute TestRail CLI to upload results
         working-directory: ${{ env.WORKING_DIR }}
         run: |
           pip install trcli
           trcli -y \
-            -h "https://marketing80testing.testrail-staging.com/" \
-            --project "Automation Framework Samples" \
-            -u "trcli@testrail.com" \
+            -h ${{ env.TESTRAIL_URL }} \
+            --project "${{ env.PROJECT_NAME }}" \
+            -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
-            parse_junit \
-            -f "reports/junit-report.xml" \
-            --suite-id 75 \
+            parse_robot \
+            -f "reports/output.xml" \
+            --section-id "2412" \
             --title "Robot Framework automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -279,12 +282,12 @@ jobs:
         run: |
           pip install trcli
           trcli -y \
-            -h "https://marketing80testing.testrail-staging.com/" \
-            --project "Automation Framework Samples" \
-            -u "trcli@testrail.com" \
+            -h ${{ env.TESTRAIL_URL }} \
+            --project "${{ env.PROJECT_NAME }}" \
+            -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "reports/junit-report.xml" \
-            --suite-id 78 \
+            --section-id "2413" \
             --title "NUnit automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
