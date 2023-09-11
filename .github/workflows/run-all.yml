@@ -33,9 +33,9 @@ jobs:
         run: |
           pip install trcli
           junitparser merge --glob "reports/TEST-*" "reports/junit-report.xml"
-          trcli -y \
+          trcli -y -v \
             -h ${{ env.TESTRAIL_URL }} \
-            --project "${{ env.PROJECT_NAME }}" \
+            --project "TRCLI SAMPLES" \
             -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
