@@ -226,13 +226,6 @@ jobs:
         uses: browser-actions/setup-chrome@latest
       - name: Chrome version check
         run: chrome --version
-      #- name: Setup chromedriver
-      #  uses: nanasess/setup-chromedriver@v2
-      #- name: Config chromedriver
-      #  run: |
-      #    export DISPLAY=:99
-      #    chromedriver --url-base=/wd/hub &
-      #    sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
       - name: Execute Robot Framework tests
         working-directory: ${{ env.WORKING_DIR }}
         continue-on-error: true
@@ -249,7 +242,7 @@ jobs:
             -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_robot \
-            -f "reports/junit-report.xml" \
+            -f "reports/output.xml" \
             --section-id "2412" \
             --title "Robot Framework automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
