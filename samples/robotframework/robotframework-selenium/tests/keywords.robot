@@ -9,7 +9,6 @@ Set TestRail Property
 Open TestRail Homepage    
     Open Browser
     ...    url=https://www.testrail.com
-    ...    browser=chrome
     ...    browser=headlesschrome
     Set Window Size    1920    1080
 
