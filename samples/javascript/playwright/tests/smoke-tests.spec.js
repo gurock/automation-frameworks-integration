@@ -78,7 +78,7 @@ test.describe('Mark all as completed', () => {
 
     // Ensure all todos have 'completed' class.
     testInfo.annotations.push({ type: 'testrail_result_comment', description: "2. Verify all todos are complete" });
-    await expect(page.locator('.todo-list li')).toHaveClass(['complete', 'complete', 'complete']);
+    await expect(page.locator('.todo-list li')).toHaveClass(['completed', 'completed', 'completed']);
     await checkNumberOfCompletedTodosInLocalStorage(page, 3);
   });
 });
