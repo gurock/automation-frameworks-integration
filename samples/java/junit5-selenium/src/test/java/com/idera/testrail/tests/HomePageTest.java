@@ -4,17 +4,21 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import com.testrail.junit.customjunitxml.TestRailTestReporter;
+import com.testrail.junit.customjunitxml.TestRailTestReporterParameterResolver;
 import com.testrail.junit.customjunitxml.annotations.TestRail;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
+@ExtendWith(TestRailTestReporterParameterResolver.class)
 class HomePageTest {
 
     public static WebDriver driver;
@@ -55,10 +59,14 @@ class HomePageTest {
 
     @TestRail(id = "101")
     @Test
-    void verifyPresenceOfDemoLinkOnHomePage() {
+    void verifyPresenceOfDemoLinkOnHomePage(TestRailTestReporter customReporter) {
         // Assertion: Check the presence of demo link
         By demoButtonSelector = By.linkText("Get a Demo");
         WebElement demoButton = driver.findElement(demoButtonSelector);
+
+        customReporter.setProperty("testrail_attachment_1", "path/to/attachment1");
+        customReporter.setProperty("testrail_result_comment", "dummy comment");
+
         assertTrue(demoButton.isDisplayed());
     }
 
