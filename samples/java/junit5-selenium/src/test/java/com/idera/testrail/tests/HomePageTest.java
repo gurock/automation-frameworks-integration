@@ -10,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import com.testrail.junit.customjunitxml.annotations.TestRail;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -45,11 +47,13 @@ class HomePageTest {
     }
 
     @Test
+    @TestRail(id = "100")
     void verifyTitleOfHomePage() {
         // Assertion: Check its title is correct
         assertTrue(driver.getTitle().contains("TestRail"));
     }
 
+    @TestRail(id = "101")
     @Test
     void verifyPresenceOfDemoLinkOnHomePage() {
         // Assertion: Check the presence of demo link
@@ -59,6 +63,7 @@ class HomePageTest {
     }
 
     @Test
+    @TestRail(id = "102")
     void invalidTest() {
         assertTrue(driver.getTitle().contains("WRONG TITLE"));
     }

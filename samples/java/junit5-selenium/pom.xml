@@ -76,5 +76,11 @@
             <version>5.5.3</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.testrail</groupId>
+            <artifactId>testrail-junit-extensions</artifactId>
+            <version>0.1.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
