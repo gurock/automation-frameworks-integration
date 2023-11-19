@@ -24,9 +24,9 @@ npm install
 # Run tests
 npx cypress run --reporter junit --reporter-options "mochaFile=reports/junit-[hash].xml"
 
-# Merge reports
-junitparser merge --glob "reports/junit-*" "reports/junit-report.xml"
 
 # Upload test results
-trcli -n -c "trcli-config.yml" parse_junit -f "reports/junit-report.xml" --case-matcher "name"
+# With TestRail CLI version 1.6.0, the report path now supports wildcards, allowing you to merge multiple reports seamlessly.
+
+trcli -n -c "trcli-config.yml" parse_junit -f "reports/junit*.xml" --case-matcher "name"
 ```

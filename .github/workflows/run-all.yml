@@ -5,12 +5,11 @@ on:
   pull_request:
     branches:
       - '*'
-  
 name: Run all frameworks
 
 env:
   TESTRAIL_USER: trcli@testrail.com
-  TESTRAIL_URL: https://testrail101.testrail.io/
+  TESTRAIL_URL: https://testrailsademo.testrail.io/
   PROJECT_NAME: SA - (DO NOT DELETE) TRCLI-Automation-Frameworks
 
 jobs:
@@ -28,7 +27,7 @@ jobs:
         uses: cypress-io/github-action@v5.3.0
         with:
           working-directory: ${{ env.WORKING_DIR }}
-          command: npx cypress run --reporter junit --reporter-options mochaFile=reports/TEST-[hash].xml
+          command: npx cypress run --reporter junit --reporter-options mochaFile=reports/junit-[hash].xml
       - name: Setup Python
         uses: actions/setup-python@v4.5.0
         with:
@@ -37,15 +36,14 @@ jobs:
         working-directory: ${{ env.WORKING_DIR }}
         run: |
           pip install trcli
-          junitparser merge --glob "reports/TEST-*" "reports/junit-report.xml"
           trcli -y \
             -h ${{ env.TESTRAIL_URL }} \
             --project "${{ env.PROJECT_NAME }}" \
             -u ${{ env.TESTRAIL_USER }} \
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
-            -f "reports/junit-report.xml" \
-            --section-id "2407" \
+            -f "reports/junit*.xml" \
+            --section-id "40" \
             --title "Cypress automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -80,7 +78,7 @@ jobs:
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "test-results/junit-report.xml" \
-            --section-id "2408" \
+            --section-id "41" \
             --title "Playwright automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -88,7 +86,7 @@ jobs:
     name: JUnit5 Selenium
     runs-on: ubuntu-latest
     env:
-      WORKING_DIR: samples/java/junit5-selenium    
+      WORKING_DIR: samples/java/junit5-selenium
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -114,7 +112,7 @@ jobs:
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "target/TEST-junit-jupiter.xml" \
-            --section-id "2409" \
+            --section-id "42" \
             --title "JUnit5 selenium automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -146,7 +144,7 @@ jobs:
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "target/TEST-junit-jupiter.xml" \
-            --section-id "2409" \
+            --section-id "43" \
             --title "JUnit5 automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -178,7 +176,7 @@ jobs:
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "reports/TEST-TestSuite.xml" \
-            --section-id "2410" \
+            --section-id "44" \
             --title "TestNG automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -211,7 +209,7 @@ jobs:
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "reports/junit-report.xml" \
-            --section-id "2411" \
+            --section-id "45" \
             --title "Pytest automated tests" \
             --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -248,7 +246,7 @@ jobs:
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_robot \
             -f "reports/output.xml" \
-            --section-id "2412" \
+            --section-id "46" \
             --title "Robot Framework automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -266,7 +264,7 @@ jobs:
           dotnet-version: 6.0.x
       - name: Install project
         working-directory: ${{ env.WORKING_DIR }}
-        run: | 
+        run: |
           dotnet build
           dotnet restore
           dotnet list SimpleTestProject.sln package
@@ -288,6 +286,6 @@ jobs:
             -p "${{ secrets.TESTRAIL_USER_PW }}" \
             parse_junit \
             -f "reports/junit-report.xml" \
-            --section-id "2413" \
+            --section-id "46" \
             --title "NUnit automated tests" \
             --run-description "GitHub workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
