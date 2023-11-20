@@ -268,7 +268,7 @@ jobs:
           dotnet-version: 6.0.x
       - name: install mono
         run: |
-          apt-get install mono-devel --allow-unauthenticated -–yes
+          apt-get install mono-devel --allow-unauthenticated --yes
       - name: Install project
         working-directory: ${{ env.WORKING_DIR }}
         run: |
