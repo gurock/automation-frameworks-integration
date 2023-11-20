@@ -268,7 +268,7 @@ jobs:
           dotnet-version: 6.0.x
       - name: install mono
         run: |
-          apt-get install mono-devel --allow-unauthenticated --yes
+          sudo apt-get install mono-devel --allow-unauthenticated --yes
       - name: Install project
         working-directory: ${{ env.WORKING_DIR }}
         run: |
@@ -279,7 +279,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIR }}
         continue-on-error: true
         run: |
-          ./NuGet/nunit.consolerunner/3.16.3/tools/nunit3-console.exe SimpleTestProject/bin/Debug/net6.0/SimpleTestProject.dll \
+          mono ./NuGet/nunit.consolerunner/3.16.3/tools/nunit3-console.exe SimpleTestProject/bin/Debug/net6.0/SimpleTestProject.dll \
             --result "reports/junit-report.xml;transform=SimpleTestProject/nunit3-junit.xslt" \
             --trace off
       - name: Execute TestRail CLI to upload results
