@@ -274,7 +274,7 @@ jobs:
         run: |
           dotnet build
           dotnet restore
-          dotnet list SimpleTestProject.sln package
+          # dotnet list SimpleTestProject.sln package
       - name: Execute tests
         working-directory: ${{ env.WORKING_DIR }}
         continue-on-error: true
