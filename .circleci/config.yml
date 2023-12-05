@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run the playwright tests
+          name: run the Playwright tests
           command: |
             cd samples/javascript/playwright
             npm install
@@ -48,7 +48,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run the pytests
+          name: run pytest tests
           command: |
             cd samples/python/pytest
             pip install -r requirements.txt || true
@@ -83,7 +83,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run the robotframework tests
+          name: run robot framework tests
           command: |
             cd samples/robotframework/robotframework-browser
             node -v
@@ -124,7 +124,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run the cypress tests
+          name: run the Cypress tests
           command: |
             cd samples/javascript/cypress
             npm install
@@ -201,7 +201,7 @@ jobs:
       - checkout
       # Build and run the tests
       - run:
-          name: Build and run the tests
+          name: Build and run the Junit Selenium tests
           command: |
             cd samples/java/junit5-selenium
             mvn clean compile test
