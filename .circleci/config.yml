@@ -1,0 +1,263 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.4.1
+working_directory: ~/automation-framework-integration
+jobs:
+  build-and-test-playwright-tests:
+    docker:
+      - image: cimg/node:21.2.0
+    steps:
+      - checkout
+      - run:
+          name: run the Playwright tests
+          command: |
+            cd samples/javascript/playwright
+            npm install
+            npx playwright install-deps
+            npx playwright install
+            npx playwright test || true
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - samples/javascript/playwright/test-results/junit-report.xml
+  install-trcli-and-parse-results-playwright:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - attach_workspace:
+          at: ./automation-framework-integration
+      - run:
+          name: Install TR CLI and upload the test results to TestRail
+          command: |
+            pip install trcli
+            trcli -y \
+            -h $TESTRAIL_INSTANCE_URL \
+            --project "Examples CircleCI" \
+            -u $TESTRAIL_USERNAME \
+            -p $TESTRAIL_PASSWORD \
+            parse_junit \
+            --title "Automated Playright Tests from CircleCI Workflow" \
+            --run-description $CIRCLE_BUILD_URL \
+            -f "./automation-framework-integration/samples/javascript/playwright/test-results/junit-report.xml"
+
+  build-and-test-python-tests:
+    docker:
+      - image: cimg/python:3.12.0-browsers
+    steps:
+      - checkout
+      - run:
+          name: run pytest tests
+          command: |
+            cd samples/python/pytest
+            pip install -r requirements.txt || true
+            pytest --junitxml "reports/junit-report.xml" "./tests" || true
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - samples/python/pytest/reports
+  install-trcli-and-parse-results-python:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - attach_workspace:
+          at: ./automation-framework-integration
+      - run:
+          name: Install TR CLI and upload the Python test results to TestRail
+          command: |
+            pip install trcli
+            trcli -y \
+            -h $TESTRAIL_INSTANCE_URL \
+            --project "Examples CircleCI" \
+            -u $TESTRAIL_USERNAME \
+            -p $TESTRAIL_PASSWORD \
+            parse_junit \
+            --title "Automated Python Tests from CircleCI Workflow" \
+            --run-description $CIRCLE_BUILD_URL \
+            -f "./automation-framework-integration/samples/python/pytest/reports/junit-report.xml"
+
+  build-and-test-robotframework-tests:
+    docker:
+      - image: cimg/python:3.7-browsers
+    steps:
+      - checkout
+      - run:
+          name: run robot framework tests
+          command: |
+            cd samples/robotframework/robotframework-browser
+            node -v
+            python --version
+            node --version
+            java --version
+            google-chrome --version
+            pip install -r requirements.txt && \
+            rfbrowser init && \
+            robot -d reports -x junit-report.xml "./tests" || true
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - samples/robotframework/robotframework-browser/reports
+  install-trcli-and-parse-results-robotframework:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - attach_workspace:
+          at: ./automation-framework-integration
+      - run:
+          name: Install TR CLI and upload the test results to TestRail
+          command: |
+            pip install trcli
+            trcli -y \
+            -h $TESTRAIL_INSTANCE_URL \
+            --project "Examples CircleCI" \
+            -u $TESTRAIL_USERNAME \
+            -p $TESTRAIL_PASSWORD \
+            parse_junit \
+            --title "Automated RobotFramework Tests from CircleCI Workflow" \
+            --run-description $CIRCLE_BUILD_URL \
+            -f "./automation-framework-integration/samples/robotframework/robotframework-browser/reports/junit-report.xml"
+
+  build-and-test-cypress-tests:
+    docker:
+      - image: cypress/base:latest
+    steps:
+      - checkout
+      - run:
+          name: run the Cypress tests
+          command: |
+            cd samples/javascript/cypress
+            npm install
+            npx cypress run --reporter junit --reporter-options "mochaFile=reports/junit-[hash].xml" || true
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - samples/javascript/cypress/reports
+  install-trcli-and-parse-results-cypress:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - attach_workspace:
+          at: ./automation-framework-integration
+      - run:
+          name: Install TR CLI and upload the test results to Testrail
+          command: |
+            pip install trcli
+            trcli -y \
+            -h $TESTRAIL_INSTANCE_URL \
+            --project "Examples CircleCI" \
+            -u $TESTRAIL_USERNAME \
+            -p $TESTRAIL_PASSWORD \
+            parse_junit \
+            --title "Automated Playright Tests from CircleCI workflow" \
+            --run-description $CIRCLE_BUILD_URL \
+            -f "./automation-framework-integration/samples/javascript/cypress/reports/junit*.xml"
+
+  build-and-test-testng-selenium:
+    docker:
+      - image: cimg/openjdk:15.0-browsers
+    steps:
+      - browser-tools/install-browser-tools:
+          chrome-version: 109.0.5414.74
+      # Checkout the code as the first step.
+      - checkout
+      # Build and run the tests
+      - run:
+          name: Build and run the TestNG Selenium
+          command: |
+            cd samples/java/testng-selenium
+            mvn clean compile test || true
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - samples/java/testng-selenium/reports
+  install-trcli-and-parse-results-testng-selenium:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - attach_workspace:
+          at: ./automation-framework-integration
+      - run:
+          name: Install TR CLI and upload the test results to TestRail
+          command: |
+            pip install trcli
+            trcli -y \
+             -h $TESTRAIL_INSTANCE_URL \
+             --project "Examples CircleCI" \
+             -u $TESTRAIL_USERNAME \
+             -p $TESTRAIL_PASSWORD \
+             parse_junit \
+             --title "Automated TestNG Selenium Tests from CircleCI Workflow" \
+             --run-description $CIRCLE_BUILD_URL \
+             -f "./automation-framework-integration/samples/java/testng-selenium/reports/TEST-TestSuite.xml"
+
+  build-and-test-junit-selenium:
+    docker:
+      - image: cimg/openjdk:15.0
+    steps:
+      - browser-tools/install-browser-tools:
+          chrome-version: 109.0.5414.74
+      # Checkout the code as the first step.
+      - checkout
+      # Build and run the tests
+      - run:
+          name: Build and run the Junit Selenium tests
+          command: |
+            cd samples/java/junit5-selenium
+            mvn clean compile test
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - samples/java/junit5-selenium/target/TEST-junit-jupiter.xml
+  install-trcli-and-parse-results-junit-selenium:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - attach_workspace:
+          at: ./automation-framework-integration
+      - run:
+          name: Install TR CLI and upload the test results to TestRail
+          command: |
+            pip install trcli
+            trcli -y \
+             -h $TESTRAIL_INSTANCE_URL \
+             --project "Examples CircleCI" \
+             -u $TESTRAIL_USERNAME \
+             -p $TESTRAIL_PASSWORD \
+             parse_junit \
+             --title "Automated JUnit Selenium Tests from CircleCI Workflow" \
+             --run-description $CIRCLE_BUILD_URL \
+             -f "./automation-framework-integration/samples/java/junit5-selenium/target/TEST-junit-jupiter.xml"
+# Invoke jobs via workflows
+workflows:
+  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+    jobs:
+      - build-and-test-playwright-tests
+      - install-trcli-and-parse-results-playwright:
+          requires:
+            - build-and-test-playwright-tests
+
+      - build-and-test-testng-selenium
+      - install-trcli-and-parse-results-testng-selenium:
+          requires:
+            - build-and-test-testng-selenium
+
+      - build-and-test-python-tests
+      - install-trcli-and-parse-results-python:
+          requires:
+            - build-and-test-python-tests
+
+      - build-and-test-robotframework-tests
+      - install-trcli-and-parse-results-robotframework:
+          requires:
+            - build-and-test-robotframework-tests
+
+      - build-and-test-cypress-tests
+      - install-trcli-and-parse-results-cypress:
+          requires:
+            - build-and-test-cypress-tests
+
+      - build-and-test-junit-selenium
+      - install-trcli-and-parse-results-junit-selenium:
+          requires:
+            - build-and-test-junit-selenium
