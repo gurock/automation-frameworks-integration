@@ -1,0 +1,140 @@
+trigger:
+  - sampleCode
+pool:
+  vmImage: ubuntu-latest
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '16.x'
+    displayName: 'Install Node.js'
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.10.13'
+    displayName: 'Setup Python'
+
+  - script: |
+      cd samples/java/testng
+      mvn clean compile test
+    displayName: 'Run Selenium TestNG Tests'
+    continueOnError: true
+
+  - script: |
+      cd samples/java/testng
+      pip install trcli
+      trcli -y \
+        -h "https://INSTANCE-NAME.testrail.io" \
+        --project "AzurePipelinesExamples" \
+        -u "USERNAME" \
+        -p "PASSWORD" \
+        parse_junit \
+        -f "reports/TEST-TestSuite.xml" \
+        --title "Selenium TestNG Automated Tests Executed From AzureDevOps Pipelines" \
+        --run-description "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)"
+    displayName: 'Upload Selenium TestNG Results in TestRail With TestRail CLI'
+
+  - script: |
+      cd samples/java/junit5
+      mvn clean compile test
+    displayName: 'Run Selenium Junit5 Tests'
+    continueOnError: true
+
+  - script: |
+      cd samples/java/junit5
+      pip install trcli
+      trcli -y \
+        -h "https://INSTANCE-NAME.testrail.io" \
+        --project "AzurePipelinesExamples" \
+        -u "USERNAME" \
+        -p "PASSWORD" \
+        parse_junit \
+        -f "target/TEST-junit-jupiter.xml" \
+        --title "Selenium Junit5 Automated Tests Executed From AzureDevOps Pipelines" \
+        --run-description "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)"
+    displayName: 'Upload Selenium Junit5 Test Results in TestRail With TestRail CLI'
+
+  - script: |
+      cd samples/javascript/playwright
+      npm install
+      npx playwright install-deps
+      npx playwright install
+      npx playwright test
+    displayName: 'Run Playwright tests'
+    continueOnError: true
+
+  - script: |
+      cd samples/javascript/playwright
+      pip install trcli
+      trcli -y \
+        -h "https://INSTANCE-NAME.testrail.io" \
+        --project "AzurePipelinesExamples" \
+        -u "USERNAME" \
+        -p "PASSWORD" \
+        parse_junit \
+        -f "test-results/junit-report.xml" \
+        --title "Playwright automated tests" \
+        --run-description "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)"
+    displayName: 'Upload Playwright Test Results in TestRail with TestRail CLI'
+
+  - script: |
+      cd samples/robotframework/robotframework-browser
+      pip install robotframework-browser
+      rfbrowser init
+      robot -d reports -x junit-report.xml "./tests" || true
+    displayName: 'Run Robot Framework tests'
+    continueOnError: true
+
+  - script: |
+      cd samples/robotframework/robotframework-browser
+      pip install trcli
+      trcli -y \
+        -h "https://INSTANCE-NAME.testrail.io" \
+        --project "AzurePipelinesExamples" \
+        -u "USERNAME" \
+        -p "PASSWORD" \
+        parse_junit \
+        -f "reports/junit-report.xml" \
+        --title "RobotFramework Automated Tests Executed From AzureDevOps Pipelines" \
+        --run-description "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)"
+    displayName: 'Upload Robot Framework tets results with TestRail CLI'
+
+  - script: |
+      cd samples/javascript/cypress
+      npm install
+      npx cypress run --reporter junit --reporter-options mochaFile=reports/junit-[hash].xml
+    displayName: 'Run Cypress Tests'
+    continueOnError: true
+
+  - script: |
+      cd samples/javascript/cypress
+      pip install trcli
+      trcli -y \
+        -h "https://INSTANCE-NAME.testrail.io" \
+        --project "AzurePipelinesExamples" \
+        -u "USERNAME" \
+        -p "PASSWORD" \
+        parse_junit \
+        -f "reports/junit*.xml" \
+        --title "Cypress Automated Tests Executed From AzureDevOps Pipelines" \
+        --run-description "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)"
+    displayName: 'Upload Cypress Test Results With TestRail CLI'
+
+  - script: |
+      cd samples/python/pytest
+      pip install -r requirements.txt || true
+      pytest --junitxml "reports/junit-report.xml" "./tests" || true
+    displayName: 'Run pytest tests'
+    continueOnError: true
+
+  - script: |
+      cd samples/python/pytest
+      pip install trcli
+      trcli -y \
+        -h "https://INSTANCE-NAME.testrail.io" \
+        --project "AzurePipelinesExamples" \
+        -u "USERNAME" \
+        -p "PASSWORD" \
+        parse_junit \
+        -f "reports/junit-report.xml" \
+        --title "Pytest Automated Tests Executed From AzureDevOps Pipelines" \
+        --run-description "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)"
+    displayName: 'Upload Pytest Results in TestRail With TestRail CLI'
