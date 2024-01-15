@@ -1,0 +1,6 @@
+samples/java/testng/reports/
+samples/.vscode/
+samples/java/testng-selenium/reports/
+samples/javascript/cypress/cypress/screenshots/
+samples/javascript/cypress/cypress/videos/
+samples/javascript/cypress/reports/
