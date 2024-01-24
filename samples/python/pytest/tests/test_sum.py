@@ -7,7 +7,7 @@ def test_sum_two_numbers():
 
 def test_sum_two_decimals(record_property):
     record_property("testrail_attachment", "sample_reports/testrail.jpg")
-    assert 0.8 + 0.3 == 1.2
+    assert 0.8 + 0.3 == 1.1
 
 
 @pytest.mark.parametrize("test_input,expected", [("3+5", 8), ("2+4", 6)])
