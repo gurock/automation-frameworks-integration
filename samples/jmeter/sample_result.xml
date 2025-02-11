@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0"
+           failures="0"
+           name="JUnit Reporter_ TRintegration"
+           skipped="0"
+           tests="2">
+   <testcase classname="Average less than 100ms" name="MEAN(.*) &lt; 1000"/>
+   <testcase classname="Not more than 1% sample error" name="ERRORS(.*) &lt;= .01"/>
+</testsuite>
