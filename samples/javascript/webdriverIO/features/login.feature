@@ -1,4 +1,4 @@
-Feature: The Internet Website Access
+Feature: Website Access Sample Tests
 
   Scenario: As a user, I can log into the secure area
 
