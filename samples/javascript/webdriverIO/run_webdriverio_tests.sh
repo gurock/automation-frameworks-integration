@@ -2,7 +2,7 @@
 clear
 bold=$(tput bold)
 echo "${bold}-----------------------------------------"
-echo "${bold}-      WebdriverIO TestRail Demo        -"
+echo "${bold}- WebdriverIO TestRail Sample Run Scrip -"
 echo "${bold}-----------------------------------------"
 echo
 
