@@ -2,7 +2,7 @@ clear
 
 bold=$(tput bold)
 TRCLI_CONFIG_PATH="C:\path\to\your\trcli\config\file\trcli-config.yml"
-TRCLI_TEST_FILE="C:\path\to\your\trcli\config\file\jmeter_perf_test.jmx"
+TRCLI_TEST_FILE="C:\path\to\your\trcli\config\file\jmeter_performance_test.jmx"
 JMETER_RESULTS="C:\path\to\your\file\sample_results.xml"
 
 echo "($bold)-------------------------------------"
