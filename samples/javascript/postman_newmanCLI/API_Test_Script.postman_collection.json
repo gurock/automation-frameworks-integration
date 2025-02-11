@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "40363078-365e-483a-9ae6-a21c1a62e541",
+		"name": "API Test Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8323242"
+	},
+	"item": [
+		{
+			"name": "Invalid Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var responseJson = pm.response.json();\r",
+							"\r",
+							"pm.test(\"has the expected 400 response code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"has the expected 'Invalid credentials' response message\", function () {\r",
+							"    pm.expect(responseJson.message).to.eql(\"Invalid credentials\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"has the expected 'message' attribute in the response\", function () {\r",
+							"    pm.expect(responseJson.hasOwnProperty('message')).to.eql(true);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Basic Y2hyaXMuZmFyYWdsaWFAZ3Vyb2NrLmNvbTpWZW50eXgzMDQwMTIzIQ=="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"emilys\",\r\n    \"password\": \"emilyspassINVALID\",\r\n    \"expiresInMins\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with Expired Credentials",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var responseJson = pm.response.json();\r",
+							"\r",
+							"pm.test(\"has the expected '200' response code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"has not receieved 'Invalid credentials' response message\", function () {\r",
+							"    pm.expect(responseJson.message).to.not.eql(\"Invalid credentials\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"has the all the expected attributes in the response for a user\", function () {\r",
+							"    pm.expect(responseJson.hasOwnProperty('username')).to.eql(true);\r",
+							"    pm.expect(responseJson.hasOwnProperty('email')).to.eql(true);\r",
+							"    pm.expect(responseJson.hasOwnProperty('firstName')).to.eql(true);\r",
+							"    pm.expect(responseJson.hasOwnProperty('lastName')).to.eql(true);\r",
+							"    pm.expect(responseJson.hasOwnProperty('gender')).to.eql(true);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Basic Y2hyaXMuZmFyYWdsaWFAZ3Vyb2NrLmNvbTpWZW50eXgzMDQwMTIzIQ=="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"emilys\",\r\n    \"password\": \"emilyspassINVALID\",\r\n    \"expiresInMins\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var responseJson = pm.response.json();\r",
+							"\r",
+							"pm.test(\"has the expected '200' response code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"has not receive 'Invalid credentials' in response message\", function () {\r",
+							"    pm.expect(responseJson.message).to.not.eql(\"Invalid credentials\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"has the all the expected attributes in the response for a user\", function () {\r",
+							"    pm.expect(responseJson.hasOwnProperty('username')).to.eql(true);\r",
+							"    pm.expect(responseJson.hasOwnProperty('email')).to.eql(true);\r",
+							"    pm.expect(responseJson.hasOwnProperty('firstName')).to.eql(true);\r",
+							"    pm.expect(responseJson.hasOwnProperty('lastName')).to.eql(true);\r",
+							"    pm.expect(responseJson.hasOwnProperty('gender')).to.eql(true);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Basic Y2hyaXMuZmFyYWdsaWFAZ3Vyb2NrLmNvbTpWZW50eXgzMDQwMTIzIQ=="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"emilys\",\r\n    \"password\": \"emilyspass\",\r\n    \"expiresInMins\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
