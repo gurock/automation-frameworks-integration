@@ -1,9 +1,9 @@
 clear
 
 bold=$(tput bold)
-TRCLI_CONFIG_PATH="C:\Users\patri\Documents\GitRepo\JMeter TestRail Integration\trcli-config.yml"
-TRCLI_TEST_FILE="C:\Users\patri\Documents\GitRepo\JMeter TestRail Integration\jmeter_perf_test.jmx"
-JMETER_RESULTS="C:\Program Files\apache-jmeter-5.6.3\bin\samples\sample_results.xml"
+TRCLI_CONFIG_PATH="C:\path\to\your\trcli\config\file\trcli-config.yml"
+TRCLI_TEST_FILE="C:\path\to\your\trcli\config\file\jmeter_perf_test.jmx"
+JMETER_RESULTS="C:\path\to\your\file\sample_results.xml"
 
 echo "($bold)-------------------------------------"
 echo "($bold)--- JMeter TestRail Sample Project --"
