@@ -39,6 +39,7 @@ jobs:
       - name: Execute TestRail CLI to upload results
         working-directory: ${{ env.WORKING_DIR }}
         run: |
+          pip install --upgrade pip
           pip install trcli
           trcli -y \
             -h ${{ env.TESTRAIL_URL }} \
