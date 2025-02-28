@@ -4,7 +4,7 @@ import { check, group } from 'k6';
 const baseUrl = 'http://jsonplaceholder.typicode.com';
 
 export const options = {
-  vus: 5,
+  vus: 1,
   stages: [
     { duration: '10s', target: 10 }
   ],
