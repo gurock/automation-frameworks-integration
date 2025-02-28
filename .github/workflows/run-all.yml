@@ -64,8 +64,6 @@ jobs:
         working-directory: ${{ env.WORKING_DIR }}
         run: |
           npm install
-          npx playwright install-deps
-          npx playwright install
           npx playwright test
       - name: Setup Python
         uses: actions/setup-python@v4.5.0
