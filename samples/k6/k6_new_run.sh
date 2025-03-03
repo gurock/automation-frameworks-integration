@@ -12,7 +12,7 @@ echo
 trcli
 echo
 
-echo "${bold}...install k6-junit library"
+echo "${bold}...install k6 and k6-junit library"
 echo
 
 npm install -g k6
