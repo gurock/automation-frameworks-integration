@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="API Test Demo" tests="3" time="0.745">
+  <testsuite name="Invalid Login" id="b8074ecc-7994-4d6f-b574-5d9091452896" timestamp="2025-02-11T10:52:44.321Z" tests="3" failures="0" errors="0" time="0.494">
+    <testcase name="has the expected 400 response code" time="0.494" classname="InvalidLogin"/>
+    <testcase name="has the expected 'Invalid credentials' response message" time="0.494" classname="InvalidLogin"/>
+    <testcase name="has the expected 'message' attribute in the response" time="0.494" classname="InvalidLogin"/>
+  </testsuite>
+  <testsuite name="Login with Expired Credentials" id="7f98c131-6d49-4294-9d9d-14d6d9fa03e2" timestamp="2025-02-11T10:52:44.321Z" tests="3" failures="3" errors="0" time="0.124">
+    <testcase name="has the expected '200' response code" time="0.124" classname="LoginWithExpiredCredentials">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 400">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 40363078-365e-483a-9ae6-a21c1a62e541.]]>
+        <![CDATA[Collection name: API Test Demo.]]>
+        <![CDATA[Request name: Login with Expired Credentials.]]>
+        <![CDATA[Test description: has the expected '200' response code.]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 400.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 400
+   at Object.eval sandbox-script.js:1:2).]]>
+      </failure>
+    </testcase>
+    <testcase name="has not receieved 'Invalid credentials' response message" time="0.124" classname="LoginWithExpiredCredentials">
+      <failure type="AssertionFailure" message="expected 'Invalid credentials' to not deeply equal 'Invalid credentials'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 40363078-365e-483a-9ae6-a21c1a62e541.]]>
+        <![CDATA[Collection name: API Test Demo.]]>
+        <![CDATA[Request name: Login with Expired Credentials.]]>
+        <![CDATA[Test description: has not receieved 'Invalid credentials' response message.]]>
+        <![CDATA[Error message: expected 'Invalid credentials' to not deeply equal 'Invalid credentials'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 'Invalid credentials' to not deeply equal 'Invalid credentials'
+   at Object.eval sandbox-script.js:2:2).]]>
+      </failure>
+    </testcase>
+    <testcase name="has the all the expected attributes in the response for a user" time="0.124" classname="LoginWithExpiredCredentials">
+      <failure type="AssertionFailure" message="expected false to deeply equal true">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 40363078-365e-483a-9ae6-a21c1a62e541.]]>
+        <![CDATA[Collection name: API Test Demo.]]>
+        <![CDATA[Request name: Login with Expired Credentials.]]>
+        <![CDATA[Test description: has the all the expected attributes in the response for a user.]]>
+        <![CDATA[Error message: expected false to deeply equal true.]]>
+        <![CDATA[Stacktrace: AssertionError: expected false to deeply equal true
+   at Object.eval sandbox-script.js:3:2).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Valid Login" id="76d22cee-0e70-4a06-8c85-fd161454a489" timestamp="2025-02-11T10:52:44.321Z" tests="3" failures="0" errors="0" time="0.127">
+    <testcase name="has the expected '200' response code" time="0.127" classname="ValidLogin"/>
+    <testcase name="has not receive 'Invalid credentials' in response message" time="0.127" classname="ValidLogin"/>
+    <testcase name="has the all the expected attributes in the response for a user" time="0.127" classname="ValidLogin"/>
+  </testsuite>
+</testsuites>
