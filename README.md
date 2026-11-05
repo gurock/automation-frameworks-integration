@@ -1,27 +1,9 @@
-![Tests](https://github.com/gurock/automation-frameworks-integration/actions/workflows/run-all.yml/badge.svg)
+# automation-frameworks-integration
 
-# TestRail test automation frameworks integration
-Sample projects on how to integrate your favorite test automation frameworks with TestRail using the TestRail CLI.
+> **This repository has moved to a new public location.**
 
-For more information on how to use the TestRail CLI, please refer to the [TestRail CLI documentation](https://support.gurock.com/hc/en-us/articles/7146548750868).
+The source code for this project is now maintained at:
 
-## Sample projects
+## [https://github.com/sembi-oss/automation-frameworks-integration](https://github.com/sembi-oss/automation-frameworks-integration)
 
-- [JUnit5](https://github.com/gurock/automation-frameworks-integration/blob/main/samples/java/junit5)
-- [JUnit5 with Selenium](https://github.com/gurock/automation-frameworks-integration/blob/main/samples/java/junit5-selenium)
-- [TestNG](https://github.com/gurock/automation-frameworks-integration/blob/main/samples/java/testng)
-- [NUnit](https://github.com/gurock/automation-frameworks-integration/blob/main/samples/dotnet/nunit)
-- [Robot Framework with Selenium](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/robotframework/robotframework-selenium)
-- [Robot Framework with Browser (Playwright)](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/robotframework/robotframework-browser)
-- [Pytest](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/python/pytest)
-- [Pytest with Selenium](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/python/pytest-selenium)
-- [Cypress](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/javascript/cypress)
-- [Cypress with saucectl](https://github.com/gurock/automation-frameworks-integration/tree/main/samples/javascript/cypress-saucectl)
-
-## Misc
-
-- [Jenkins docker images](https://github.com/gurock/automation-frameworks-integration/blob/main/misc/jenkins-docker)
-- [Azure pipelines agent image](https://github.com/gurock/automation-frameworks-integration/blob/main/misc/azure-pipelines-agent-docker)
-
-## License
-[BSD 3-Clause License](https://github.com/gurock/automation-frameworks-integration/tree/main/LICENSE.md)
+Please update your bookmarks, forks, and any references to point to the new address.
